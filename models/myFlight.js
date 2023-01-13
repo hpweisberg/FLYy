@@ -1,0 +1,24 @@
+import mongoose from 'mongoose'
+
+const Schema = mongoose.Schema
+
+const myFlightSchema = new Schema({
+  owner: { type: Schema.Types.ObjectId, ref: 'Profile'},
+  flightNo: String,
+  flightDate: Date,
+  airline: String,
+  departureAirport: String,
+  arrivalAirport: String,
+  departureTime: Date,
+  arrivalTime: Date,
+  isFlying: Boolean,
+  arrivalWeather: String,
+}, {
+  timestamps: true
+})
+
+const myFlight = mongoose.model('myFlight', myFlightSchema)
+
+export {
+  myFlight
+}

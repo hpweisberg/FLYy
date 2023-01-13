@@ -6,6 +6,7 @@ const userSchema = new Schema({
   email: String,
   googleId: String,
   profile: { type: Schema.Types.ObjectId, ref: 'Profile' },
+  role: Number
 }, {
   timestamps: true,
 })
