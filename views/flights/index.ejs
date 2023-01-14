@@ -9,31 +9,31 @@
   
   <section class="flight-list">
     <div class="flight-card">
-      <% myFlights.forEach(myFlight => { %>
-        <a href="/myFlights/<%= myFlight._id %>">
+      <% flights.forEach(flight => { %>
+        <a href="/flights/<%= flight._id %>">
 
           <div class=flight-card-left>
-            <%= myFlight.flightDate %> 
-            <%= myFlight.airline %> 
+            <%= flight.flightDate %> 
+            <%= flight.airline %> 
             
           </div>
         </a>
         <% }) %>
 
         
-      <% myFlights.forEach(myFlight => { %>
+      <% flights.forEach(flight => { %>
         <div class=flight-card-mid>
-          <%= myFlight.departureAirport %> 
-          <%= myFlight.departureTime %> 
+          <%= flight.departureAirport %> 
+          <%= flight.departureTime %> 
           
         </div>
         <% }) %>
 
         
-      <% myFlights.forEach(myFlight => { %>
+      <% flights.forEach(flight => { %>
         <div class=flight-card-right>
-          <%= myFlight.arrivalAirport %> 
-          <%= myFlight.arrivalTime %> 
+          <%= flight.arrivalAirport %> 
+          <%= flight.arrivalTime %> 
           
         </div>
         <% }) %>
@@ -42,7 +42,7 @@
   </section>
 
 
-  <a href="/myFlights/new">
+  <a href="/flights/new">
     <button>Add Flight</button>
   </a>
 

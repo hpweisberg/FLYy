@@ -1,11 +1,11 @@
-import { MyFlight } from "../models/myFlight.js";
+import { Flight } from "../models/flight.js";
 
 function index(req, res){
-  MyFlight.find({})
-  .then(myFlights => {
-    res.render('myFlights/index', {
-      myFlights,
-      title: "myFlights"
+  Flight.find({})
+  .then(flights => {
+    res.render('flights/index', {
+      flights,
+      title: "flights"
     })
   })
   .catch(err => {
@@ -15,10 +15,10 @@ function index(req, res){
 }
 
 function newFlight(req, res){
-  // const newFlight = new MyFlight()
+  // const newFlight = new Flight()
   // const dt = newFlight.flightDate
   // const departsDate = dt.toISOString().slice(0, 16)
-  res.render('myFlights/new', {
+  res.render('flights/new', {
     title: 'Add Flight',
     // flightDate: departsDate,
   })
@@ -30,9 +30,9 @@ function newFlight(req, res){
 
 function create(req, res){
   console.log(req.body)
-  MyFlight.create(req.body)
-  .then(myFlight => {
-    res.redirect('/myFlights')
+  Flight.create(req.body)
+  .then(flight => {
+    res.redirect('/flights')
   })
   .catch(err => {
     console.log(err)
@@ -41,11 +41,11 @@ function create(req, res){
 }
 
 function show(req, res){
-  MyFlight.findById(req.params.id)
-  .then(myFlight => {
-    res.render('myFlights/show', {
-      title: 'MyFlight Detail',
-      myFlight,
+  Flight.findById(req.params.id)
+  .then(flight => {
+    res.render('flights/show', {
+      title: 'Flight Detail',
+      flight,
     })
   })
 }

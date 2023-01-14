@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
-const myJourneySchema = new Schema({
+const journeySchema = new Schema({
   owner: { type: Schema.Types.ObjectId, ref: 'Profile'},
   date: Date,
   journalPost: String,
@@ -12,8 +12,8 @@ const myJourneySchema = new Schema({
   timestamps: true
 })
 
-const MyJourney = mongoose.model('myJourney', myJourneySchema)
+const Journey = mongoose.model('Journey', journeySchema)
 
 export {
-  MyJourney
+  Journey
 }

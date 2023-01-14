@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
-const myFlightSchema = new Schema({
+const flightSchema = new Schema({
   owner: { type: Schema.Types.ObjectId, ref: 'Profile'},
   flightNo: Number,
   flightDate: Date,
@@ -17,8 +17,8 @@ const myFlightSchema = new Schema({
   timestamps: true
 })
 
-const MyFlight = mongoose.model('myFlight', myFlightSchema)
+const Flight = mongoose.model('flight', flightSchema)
 
 export {
-  MyFlight
+  Flight
 }
