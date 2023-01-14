@@ -41,8 +41,11 @@
     <input type="datetime-local" id="arrival-time" name="arrivalTime">
 
     <button type="submit">Update MyFlight</button>
-
   </form>
+    <form action="/flights/<%= flight._id %>?_method=DELETE" method="POST">
+      <button class="delete-btn">Delete MyFlight</button>
+    </form>
+
 
   <a href="/flights/<%= flight._id %> " class="back">Go back</a>
 </main>
