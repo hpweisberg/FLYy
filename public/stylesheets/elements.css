@@ -18,3 +18,18 @@
 .flight-card-right {
   background-color: green;
 }
+
+#new-flight {
+  display: flex;
+  flex-direction: column;
+}
+
+#edit-flight {
+  display: flex;
+  flex-direction: column;
+}
+
+.show-flight {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,8 +1,48 @@
+<link rel="stylesheet" href="/stylesheets/elements.css">
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
 <main>
-  <h1>testttttt</h1>
+  <h1>EDITZZZZ</h1>
+
+<!-- ? ID could be new-flight like the new flight view. -->
+
+  <form action="/flights/<%= flight._id %>?_method=PUT" id="edit-flight" method="POST">
+    <label for="flight-date">Date:<%= new Date(flight.flightDate).toLocaleDateString() + " -- "  + new Date(flight.flightDate).toLocaleTimeString([], {timeStyle: 'short'})%> </label>
+    <input type="date" id="flight-date" name="flightDate">
+
+    <label for="flight-no">Flight Number:</label>
+    <input type="number" value="<%= flight.flightNo %>" id="flight-no" name="flightNo">
+
+    <label for="airline">Airline:</label>
+    <select id="airline" name="airline">
+      <option value="" disabled selected hidden><%= flight.airline %></option>
+      <option value="American Airlines">American Airlines</option>
+      <option value="Delta Air Lines">Delta Air Lines</option>
+      <option value="United Airlines">United Airlines</option>
+      <option value="Southwest Airlines">Southwest Airlines</option>
+      <option value="Alaska Airlines">Alaska Airlines</option>
+      <option value="JetBlue">JetBlue</option>
+      <option value="Spirit Airlines">Spirit Airlines</option>
+      <option value="Frontier Airlines">Frontier Airlines</option>
+      <option value="Hawaiian Airlines">Hawaiian Airlines</option>
+    </select>
+
+    <label for="departure-airport">Departing:</label>
+    <input type="text" value="<%= flight.departureAirport %>" id="departure-airport" name="departureAirport">
+
+    <label for="arrival-airport">Arriving:</label>
+    <input type="text" value="<%= flight.arrivalAirport %>" id="arrival-airport" name="arrivalAirport">
+    
+    <label for="departure-time">Departing Time: <%= new Date(flight.departureTime).toLocaleDateString() + " -- "  + new Date(flight.departureTime).toLocaleTimeString([], {timeStyle: 'short'})%> </label>
+    <input type="datetime-local" id="departure-time" value="<%= flight.departureTime %>" name="departureTime">
+    
+    <label for="arrival-time" <%= new Date(flight.arrivalTime).toLocaleDateString() + " -- "  + new Date(flight.arrivalTime).toLocaleTimeString([], {timeStyle: 'short'})%>>Arrival Time: <%= new Date(flight.arrivalTime).toLocaleDateString() + " -- "  + new Date(flight.arrivalTime).toLocaleTimeString([], {timeStyle: 'short'})%> </label>
+    <input type="datetime-local" id="arrival-time" name="arrivalTime">
+
+    <button type="submit">Update MyFlight</button>
+
+  </form>
 
 </main>
 
