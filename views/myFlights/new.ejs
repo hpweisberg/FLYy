@@ -2,7 +2,43 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1>this is the new section</h1>
+  <h1>Add a new flight</h1>
+
+  <form action="/myFlights" id="new-flight" method="POST">
+    <label for="flight-date">Date:</label>
+    <input type="date" id="flight-date" name="flightDate">
+
+    <label for="flight-no">Flight Number:</label>
+    <input type="number" id="flight-no" name="flightNo">
+
+    <label for="airline">Airline:</label>
+    <select id="airline" name="airline">
+      <option value="American Airlines">American Airlines</option>
+      <option value="Delta Air Lines">Delta Air Lines</option>
+      <option value="United Airlines">United Airlines</option>
+      <option value="Southwest Airlines">Southwest Airlines</option>
+      <option value="Alaska Airlines">Alaska Airlines</option>
+      <option value="JetBlue">JetBlue</option>
+      <option value="Spirit Airlines">Spirit Airlines</option>
+      <option value="Frontier Airlines">Frontier Airlines</option>
+      <option value="Hawaiian Airlines">Hawaiian Airlines</option>
+    </select>
+
+    <label for="departure-airport">Departing:</label>
+    <input type="text" id="departure-airport" name="departureAirport">
+
+    <label for="arrival-airport">Arriving:</label>
+    <input type="text" id="arrival-airport" name="arrivalAirport">
+    
+    <label for="departure-time">Departing Time:</label>
+    <input type="datetime-local" id="departure-time" name="departureTime">
+    
+    <label for="arrival-time">Arrival Time:</label>
+    <input type="datetime-local" id="arrival-time" name="arrivalTime">
+
+    <button type="submit">Add MyFlight</button>
+
+  </form>
 
 </main>
 

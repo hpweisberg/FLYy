@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 
 const myFlightSchema = new Schema({
   owner: { type: Schema.Types.ObjectId, ref: 'Profile'},
-  flightNo: String,
+  flightNo: Number,
   flightDate: Date,
   airline: String,
   departureAirport: String,
