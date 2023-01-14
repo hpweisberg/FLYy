@@ -5,6 +5,8 @@ const router = Router()
 
 router.get('/', myFlightsCtrl.index)
 
+router.get('/new', myFlightsCtrl.new)
+
 export {
   router
 }
