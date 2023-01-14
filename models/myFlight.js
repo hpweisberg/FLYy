@@ -17,8 +17,8 @@ const myFlightSchema = new Schema({
   timestamps: true
 })
 
-const myFlight = mongoose.model('myFlight', myFlightSchema)
+const MyFlight = mongoose.model('myFlight', myFlightSchema)
 
 export {
-  myFlight
+  MyFlight
 }

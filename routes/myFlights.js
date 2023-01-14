@@ -1,10 +1,9 @@
 import { Router } from 'express'
+import * as myFlightsCtrl from '../controllers/myFlights.js'
 
 const router = Router()
 
-router.get('/', function (req, res) {
-  res.render('index', { title: 'Home Page' })
-})
+router.get('/', myFlightsCtrl.index)
 
 export {
   router

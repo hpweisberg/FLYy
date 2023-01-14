@@ -7,8 +7,8 @@ const profileSchema = new Schema({
   lastName: String,
   avatar: String,
   friendId: Number,
-  myFlight: { type: Schema.Types.ObjectId, ref: 'myFlight'},
-  myJourney: { type: Schema.Types.ObjectId, ref: 'myJourney'},
+  myFlight: { type: Schema.Types.ObjectId, ref: 'MyFlight'},
+  myJourney: { type: Schema.Types.ObjectId, ref: 'MyJourney'},
   myFriends: [{ type: Schema.Types.ObjectId, ref: 'Profile'}],
   blockedFriends: [{ type: Schema.Types.ObjectId, ref: 'Profile'}],
 }, {

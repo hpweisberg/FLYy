@@ -12,8 +12,8 @@ const myJourneySchema = new Schema({
   timestamps: true
 })
 
-const myJourney = mongoose.model('myJourney', myJourneySchema)
+const MyJourney = mongoose.model('myJourney', myJourneySchema)
 
 export {
-  myJourney
+  MyJourney
 }
