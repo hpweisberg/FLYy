@@ -1,0 +1,20 @@
+
+.flight-card {
+  /* display: flex; */
+  width: 20em;
+  height: 20em;
+}
+
+
+
+.flight-card-left {
+  background-color: red;
+}
+
+.flight-card-mid {
+  background-color: blue;
+}
+
+.flight-card-right {
+  background-color: green;
+}

@@ -15,8 +15,12 @@ function index(req, res){
 }
 
 function newFlight(req, res){
+  // const newFlight = new MyFlight()
+  // const dt = newFlight.flightDate
+  // const departsDate = dt.toISOString().slice(0, 16)
   res.render('myFlights/new', {
     title: 'Add Flight',
+    // flightDate: departsDate,
   })
   .catch(err => {
     console.log(err)
@@ -36,8 +40,19 @@ function create(req, res){
   })
 }
 
+function show(req, res){
+  MyFlight.findById(req.params.id)
+  .then(myFlight => {
+    res.render('myFlights/show', {
+      title: 'MyFlight Detail',
+      myFlight,
+    })
+  })
+}
+
 export {
   index,
   newFlight as new,
-  create
+  create,
+  show,
 }

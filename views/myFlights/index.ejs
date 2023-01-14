@@ -1,7 +1,46 @@
-<%- include('../partials/html-head') %>
-<%- include('../partials/nav') %>
+<link rel="stylesheet" href="/stylesheets/elements.css">
+<%- include('../partials/html-head') %> 
+<%- include('../partials/nav') %> 
+
+
 
 <main>
+  <h1>myFlights PAge</h1>
+  
+  <section class="flight-list">
+    <div class="flight-card">
+      <% myFlights.forEach(myFlight => { %>
+        <a href="/myFlights/<%= myFlight._id %>">
+
+          <div class=flight-card-left>
+            <%= myFlight.flightDate %> 
+            <%= myFlight.airline %> 
+            
+          </div>
+        </a>
+        <% }) %>
+
+        
+      <% myFlights.forEach(myFlight => { %>
+        <div class=flight-card-mid>
+          <%= myFlight.departureAirport %> 
+          <%= myFlight.departureTime %> 
+          
+        </div>
+        <% }) %>
+
+        
+      <% myFlights.forEach(myFlight => { %>
+        <div class=flight-card-right>
+          <%= myFlight.arrivalAirport %> 
+          <%= myFlight.arrivalTime %> 
+          
+        </div>
+        <% }) %>
+    </div>
+
+  </section>
+
 
   <a href="/myFlights/new">
     <button>Add Flight</button>
