@@ -2,7 +2,26 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1>testttttt</h1>
+  <h1>SHOW VIEWZ</h1>
+
+  <h1><%= title %></h1>
+  <section>
+    <div>Date: </div>
+    <div><%= flight.flightDate %></div>
+    <div>Airline: </div>
+    <div><%= flight.airline %></div>
+    <div>Departing Airport: </div>
+    <div><%= flight.departureAirport %></div>
+    <div>Arrival Airport: </div>
+    <div><%= flight.arrivalAirport %></div>
+    <div>Flight Number: </div>
+    <div><%= flight.flightNo %></div>
+    <div>Departs: </div>
+    <div><%= new Date(flight.departureTime).toLocaleDateString() + " -- "  + new Date(flight.departureTime).toLocaleTimeString([], {timeStyle: 'short'})%></div>
+    <a href="/flights/<%= flight._id %>/edit">
+      <button class="edit-btn">Edit</button>
+    </a>
+  </section>
 
 </main>
 
