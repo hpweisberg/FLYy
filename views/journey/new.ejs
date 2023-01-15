@@ -1,0 +1,24 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+
+  <h1>Add a new Journey</h1>
+
+  <form action="/journey" id="new-journey" method="POST">
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="journeyDate">
+
+    <label for="journeylPost">Journey Post:</label>
+    <input type="string" id="new-journey" name="journeyPost">
+
+    <button type="submit">Add MyJourney</button>
+
+  </form>
+
+  <a href="/flights" class="back">Go back</a>
+
+
+</main>
+
+<%- include('../partials/footer') %>

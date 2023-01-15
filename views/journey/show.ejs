@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="/stylesheets/elements.css">
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1>SHOW VIEW FOR JOURNEYYY</h1>
+
+  <h1><%= title %></h1>
+  <% if (journey.owner.equals(user?.profile._id)) { %>
+    <section class="show-journey">
+      <div>Date: </div>
+      <div><%= journey.journeyDate %></div>
+      <div>Journey: </div>
+      <div><%= journey.journeyPost %></div>
+      <div>Owner: </div>
+      <div><%= journey.owner %></div>
+      
+      
+      <a href="/journey/<%= journey._id %>/edit">
+        <button class="edit-btn">Edit</button>
+      </a>
+    </section>
+  <% } %>
+
+  <a href="/journey" class="back">Go back</a>
+
+</main>
+
+<%- include('../partials/footer') %>

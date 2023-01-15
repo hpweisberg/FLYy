@@ -4,8 +4,8 @@ const Schema = mongoose.Schema
 
 const journeySchema = new Schema({
   owner: { type: Schema.Types.ObjectId, ref: 'Profile'},
-  date: Date,
-  journalPost: String,
+  journeyDate: Date,
+  journeyPost: String,
   likes: Number,
   hasLiked: [{ type: Schema.Types.ObjectId, ref: 'Profile'}]
 }, {

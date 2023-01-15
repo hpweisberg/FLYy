@@ -5,6 +5,29 @@
   <h1>testttttt</h1>
   <h1>journey</h1>
 
+  <a href="/journey/new">Add new Journey</a>
+
+  <section class="journey-list">
+    <div class="journey-card">
+      <% journey.forEach(journey => { %>
+        <% if (journey.owner.equals(user?.profile._id)) { %>
+          <a href="/journey/<%= journey._id %>">
+            
+            <div class=journey-card-left>
+              <%= journey.owner.profile%> 
+              <%= journey.journeyDate %> 
+              <%= journey.journeyPost %> 
+              
+            </div>
+          </a>
+          <% } %>
+          <% }) %>
+          
+        
+    </div>
+
+  </section>
+
 </main>
 
 <%- include('../partials/footer') %>

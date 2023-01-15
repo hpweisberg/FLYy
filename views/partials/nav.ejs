@@ -4,13 +4,16 @@
 </head>
 <body>
   <nav>
-    <div class="menu-icon">
-      <div class="line-icon"></div>
-      <div class="line-icon"></div>
-      <div class="line-icon"></div>
-    </div>
+    <div class="logo-pic" class="">FLYy</div>
+    <nav class="primary-header">
+      <ul role="list" class="nav-list">
+        <li><a href="/flights">myFlights</a></li>
+        <li><a href="/friends">myFriends</a></li>
+        <li><a href="/journey">myJourney</a></li>
+      </ul>
+    </nav>
     <% if (user) { %>
-      <a href="/auth/logout" class="right">
+      <a href="/auth/logout" class="logout-btn">
         <button type="submit">Logout</button>
       </a>
       <h1 class="profile-first-name"><%= user ? user.profile.name.split(' ').slice(0, -1) : "";
