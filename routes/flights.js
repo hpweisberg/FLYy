@@ -1,28 +1,29 @@
 import { Router } from 'express'
 import * as flightsCtrl from '../controllers/flights.js'
+import { isLoggedIn } from '../middleware/middleware.js'
 
 const router = Router()
 
 // GET /flights/
-router.get('/', flightsCtrl.index)
+router.get('/', isLoggedIn, flightsCtrl.index)
 
 // GET /flights/
-router.get('/new', flightsCtrl.new)
+router.get('/new', isLoggedIn, flightsCtrl.new)
 
 // GET /flights/:id
-router.get('/:id', flightsCtrl.show)
+router.get('/:id', isLoggedIn, flightsCtrl.show)
 
 // GET /flights/:id/edit
-router.get('/:id/edit', flightsCtrl.edit)
+router.get('/:id/edit', isLoggedIn, flightsCtrl.edit)
 
 // POST /flights/
-router.post('/', flightsCtrl.create)
+router.post('/', isLoggedIn, flightsCtrl.create)
 
 // PUT /flights/:id
-router.put('/:id', flightsCtrl.update)
+router.put('/:id', isLoggedIn, flightsCtrl.update)
 
 // DELETE /flights/:id
-router.delete('/:id', flightsCtrl.delete)
+router.delete('/:id', isLoggedIn, flightsCtrl.delete)
 
 export {
   router

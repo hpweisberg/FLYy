@@ -10,36 +10,47 @@
   <section class="flight-list">
     <div class="flight-card">
       <% flights.forEach(flight => { %>
-        <a href="/flights/<%= flight._id %>">
-
-          <div class=flight-card-left>
-            <%= flight.flightDate %> 
-            <%= flight.airline %> 
+        <% if (flight.owner.equals(user?.profile._id)) { %>
+          <a href="/flights/<%= flight._id %>">
             
-          </div>
-        </a>
-        <% }) %>
-
-        
-      <% flights.forEach(flight => { %>
-        <div class=flight-card-mid>
-          <%= flight.departureAirport %> 
-          <%= flight.departureTime %> 
+            <div class=flight-card-left>
+              <%= flight.flightDate %> 
+              <%= flight.airline %> 
+              
+            </div>
+          </a>
+          <% } %>
+          <% }) %>
           
-        </div>
-        <% }) %>
-
-        
-      <% flights.forEach(flight => { %>
-        <div class=flight-card-right>
-          <%= flight.arrivalAirport %> 
-          <%= flight.arrivalTime %> 
           
-        </div>
+          <% flights.forEach(flight => { %>
+            <div class=flight-card-mid>
+              <% if (flight.owner.equals(user?.profile._id)) { %>
+                <%= flight.departureAirport %> 
+                <%= flight.departureTime %> 
+                
+              </div>
+              <% } %>
+              <% }) %>
+              
+              
+              <% flights.forEach(flight => { %>
+                <div class=flight-card-right>
+                  <% if (flight.owner.equals(user?.profile._id)) { %>
+                  <%= flight.arrivalAirport %> 
+                  <%= flight.arrivalTime %> 
+                  
+                </div>
+                <% } %>
         <% }) %>
     </div>
 
   </section>
+
+  <br>
+  <br><br>
+  <br>
+  <br><br>
 
 
   <a href="/flights/new">

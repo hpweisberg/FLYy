@@ -30,6 +30,7 @@ function newFlight(req, res){
 
 function create(req, res){
   console.log(req.body)
+  req.body.owner = req.user.profile._id
   Flight.create(req.body)
   .then(flight => {
     res.redirect('/flights')
@@ -41,13 +42,15 @@ function create(req, res){
 }
 
 function show(req, res){
-  Flight.findById(req.params.id)
-  .then(flight => {
-    res.render('flights/show', {
-      title: 'Flight Detail',
-      flight,
+  if (flight.owner.equals(req.user.profile._id)) {
+    Flight.findById(req.params.id)
+    .then(flight => {
+      res.render('flights/show', {
+        title: 'Flight Detail',
+        flight,
+      })
     })
-  })
+  }
 }
 
 function edit(req, res){

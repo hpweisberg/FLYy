@@ -6,25 +6,27 @@
   <h1>SHOW VIEWZ</h1>
 
   <h1><%= title %></h1>
-  <section class="show-flight">
-    <div>Date: </div>
-    <div><%= flight.flightDate %></div>
-    <div>Airline: </div>
-    <div><%= flight.airline %></div>
-    <div>Departing Airport: </div>
-    <div><%= flight.departureAirport %></div>
-    <div>Arrival Airport: </div>
-    <div><%= flight.arrivalAirport %></div>
-    <div>Flight Number: </div>
-    <div><%= flight.flightNo %></div>
-    <div>Departs: </div>
-    <div><%= new Date(flight.departureTime).toLocaleDateString() + " -- "  + new Date(flight.departureTime).toLocaleTimeString([], {timeStyle: 'short'})%></div>
-    <div>Arrival: </div>
-    <div><%= new Date(flight.arrivalTime).toLocaleDateString() + " -- "  + new Date(flight.arrivalTime).toLocaleTimeString([], {timeStyle: 'short'})%></div>
-    <a href="/flights/<%= flight._id %>/edit">
-      <button class="edit-btn">Edit</button>
-    </a>
-  </section>
+  <% if (flights.owner.equals(user?.profile._id)) { %>
+    <section class="show-flight">
+      <div>Date: </div>
+      <div><%= flight.flightDate %></div>
+      <div>Airline: </div>
+      <div><%= flight.airline %></div>
+      <div>Departing Airport: </div>
+      <div><%= flight.departureAirport %></div>
+      <div>Arrival Airport: </div>
+      <div><%= flight.arrivalAirport %></div>
+      <div>Flight Number: </div>
+      <div><%= flight.flightNo %></div>
+      <div>Departs: </div>
+      <div><%= new Date(flight.departureTime).toLocaleDateString() + " -- "  + new Date(flight.departureTime).toLocaleTimeString([], {timeStyle: 'short'})%></div>
+      <div>Arrival: </div>
+      <div><%= new Date(flight.arrivalTime).toLocaleDateString() + " -- "  + new Date(flight.arrivalTime).toLocaleTimeString([], {timeStyle: 'short'})%></div>
+      <a href="/flights/<%= flight._id %>/edit">
+        <button class="edit-btn">Edit</button>
+      </a>
+    </section>
+  <% } %>
 
   <a href="/flights" class="back">Go back</a>
 
