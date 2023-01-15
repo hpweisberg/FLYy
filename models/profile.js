@@ -3,8 +3,7 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const profileSchema = new Schema({
-  firstName: String,
-  lastName: String,
+  name: String,
   avatar: String,
   friendId: Number,
   myFlight: { type: Schema.Types.ObjectId, ref: 'MyFlight'},

@@ -4,10 +4,24 @@
 </head>
 <body>
   <nav>
+    <div class="menu-icon">
+      <div class="line-icon"></div>
+      <div class="line-icon"></div>
+      <div class="line-icon"></div>
+    </div>
     <% if (user) { %>
       <a href="/auth/logout" class="right">
         <button type="submit">Logout</button>
       </a>
+      <h1 class="profile-first-name"><%= user ? user.profile.name.split(' ').slice(0, -1) : "";
+        %></h1>
+      <% if (user?.profile.avatar) { %>
+          <img
+          class="profile-pic"
+            src="<%= user.profile.avatar %>"
+            alt="<%= user.profile.name %> avatar"
+          />
+      <% } %>
     <% } else { %>
       <div 
         id="g_id_onload"
