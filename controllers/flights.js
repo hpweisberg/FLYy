@@ -42,15 +42,13 @@ function create(req, res){
 }
 
 function show(req, res){
-  if (flight.owner.equals(req.user.profile._id)) {
-    Flight.findById(req.params.id)
-    .then(flight => {
-      res.render('flights/show', {
-        title: 'Flight Detail',
-        flight,
-      })
+  Flight.findById(req.params.id)
+  .then(flight => {
+    res.render('flights/show', {
+      title: 'Flight Detail',
+      flight,
     })
-  }
+  })
 }
 
 function edit(req, res){

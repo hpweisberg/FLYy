@@ -6,7 +6,7 @@
   <h1>SHOW VIEWZ</h1>
 
   <h1><%= title %></h1>
-  <% if (flights.owner.equals(user?.profile._id)) { %>
+  <% if (flight.owner.equals(user?.profile._id)) { %>
     <section class="show-flight">
       <div>Date: </div>
       <div><%= flight.flightDate %></div>
