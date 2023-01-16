@@ -8,6 +8,7 @@ import session from 'express-session'
 import logger from 'morgan'
 import methodOverride from 'method-override'
 import passport from 'passport'
+import { v4 as uuidv4 } from 'uuid'
 
 // import custom middleware
 import { passDataToView } from './middleware/middleware.js'
@@ -24,6 +25,7 @@ import { router as authRouter } from './routes/auth.js'
 import { router as flightsRouter } from './routes/flights.js'
 import { router as friendsRouter } from './routes/friends.js'
 import { router as journeyRouter } from './routes/journey.js'
+import { router as profileRouter } from './routes/profile.js'
 
 // create the express app
 const app = express()
@@ -71,6 +73,7 @@ app.use('/auth', authRouter)
 app.use('/flights', flightsRouter)
 app.use('/friends', friendsRouter)
 app.use('/journey', journeyRouter)
+app.use('/profile', profileRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

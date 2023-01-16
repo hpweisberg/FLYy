@@ -9,7 +9,9 @@
   <% if (flight.owner.equals(user?.profile._id)) { %>
     <section class="show-flight">
       <div>Date: </div>
-      <div><%= flight.flightDate %></div>
+      <div><%= new Date(flight.flightDate).toLocaleDateString(undefined, {
+        month: "short", day: "numeric"
+      }) %></div>
       <div>Airline: </div>
       <div><%= flight.airline %></div>
       <div>Departing Airport: </div>
@@ -19,9 +21,15 @@
       <div>Flight Number: </div>
       <div><%= flight.flightNo %></div>
       <div>Departs: </div>
-      <div><%= new Date(flight.departureTime).toLocaleDateString() + " -- "  + new Date(flight.departureTime).toLocaleTimeString([], {timeStyle: 'short'})%></div>
+      <div>
+        <%= (flight.departureTime).toLocaleDateString(undefined, {
+        hour: "numeric", minute: "numeric"}).slice(-7) %>
+      </div>
       <div>Arrival: </div>
-      <div><%= new Date(flight.arrivalTime).toLocaleDateString() + " -- "  + new Date(flight.arrivalTime).toLocaleTimeString([], {timeStyle: 'short'})%></div>
+      <div><%= 
+      (flight.arrivalTime).toLocaleDateString(undefined, {
+        hour: "numeric", minute: "numeric"
+      }).slice(-7) %> </div>
       <a href="/flights/<%= flight._id %>/edit">
         <button class="edit-btn">Edit</button>
       </a>

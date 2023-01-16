@@ -11,16 +11,21 @@
   margin-right: auto 
 }
 
+@media (max-width: 480) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  h1 {
+    color: red;
+  }
+}
+
 
 
 
 .line {
   width: 5px;
   height: 80%;
-  background-color: aliceblue;
+  background-color: var(--clr-accent-400);
 }
-
-
-/* .profile-pic {
-
-} */

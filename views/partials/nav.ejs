@@ -18,15 +18,20 @@
       <a href="/auth/logout" class="logout-btn">
         <button type="submit">Logout</button>
       </a>
-      <h1 class="profile-first-name"><%= user ? user.profile.name.split(' ').slice(0, -1) : "";
+      <a href="/profile" class="profile-first-name">
+
+        <h1 class="profile-first-name"><%= user ? user.profile.name.split(' ').slice(0, -1) : "";
         %></h1>
+      </a>
       <% if (user?.profile.avatar) { %>
+        <a href="/profile">
           <img
           class="profile-pic"
-            src="<%= user.profile.avatar %>"
-            alt="<%= user.profile.name %> avatar"
+          src="<%= user.profile.avatar %>"
+          alt="<%= user.profile.name %> avatar"
           />
-      <% } %>
+        </a>
+        <% } %>
     <% } else { %>
       <div 
         id="g_id_onload"

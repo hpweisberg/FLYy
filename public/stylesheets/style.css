@@ -5,13 +5,13 @@ html {
 :root {
 
   /* ! Font Colors */
-  --clr-accent-400: hs1(12, 88%, 59%); 
-  --clr-accent-100: hs1(13, 100%, 96%);
+  --clr-accent-400: hsl(12, 88%, 59%); 
+  --clr-accent-100: hsl(13, 100%, 96%);
 
-  --clr-primary-400: hs1(228, 39%, 23%);
+  --clr-primary-400: hsl(228, 39%, 23%);
   
-  --clr-neutral-900: hs1(232, 12%, 13%);
-  --clr-neutral-100: hs1(0, 0%, 100%);
+  --clr-neutral-900: hsl(232, 12%, 13%);
+  --clr-neutral-100: hsl(0, 0%, 100%);
 
   --ff-primary: font-family: 'Be Vietnam Pro', sans-serif;
 
@@ -142,6 +142,9 @@ main {
 
 .profile-first-name {
   font-size: --fs-200;
+  text-decoration: none;
+  color: var(--clr-primary-400);
+  align-items: flex-end;
   
   /* font-size: 18px; */
 }

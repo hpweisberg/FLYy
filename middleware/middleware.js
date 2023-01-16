@@ -9,6 +9,11 @@ function isLoggedIn(req, res, next) {
   res.redirect('/')
 }
 
+// function makeFriendCode(req, res, next){
+//   if (req.user)
+// }
+
+
 export {
   passDataToView,
   isLoggedIn,

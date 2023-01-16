@@ -1,23 +1,89 @@
 
+.main-flight-container {
+  display: flex;
+  flex-direction: row;
+  gap: 5em;
+
+}
+
+.flight-list {
+  display: flex;
+  flex-direction: column;
+  width: 30em;
+  height: 100vh;
+  align-items: center;
+  
+  background-color: var(--clr-accent-100);
+}
+
 .flight-card {
-  /* display: flex; */
-  width: 20em;
-  height: 20em;
+  display: flex;
+  flex-direction: column;
+  width: 28em;
+  height: 9em;
+  padding: 1em;
+  border-radius: 5%;
+  border: 3px solid black;
+  align-items: stretch;
+  justify-content: space-around;
+  margin: .5em 0;
+}
+
+.flight-card:hover {
+  cursor: pointer;
+  background-color: lightblue;
+}
+
+.flight-card-content {
+  display: flex;
+  flex-direction: row;
+  height: 8em;
+  width: 24em;
+  color: var(--clr-primary-400);
 }
 
 
 
 .flight-card-left {
-  background-color: red;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  width: 10em;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 .flight-card-mid {
-  background-color: blue;
+  /* background-color: blue; */
+  display: flex;
+  flex-direction: column;
+  width: 10em;
+  align-items: center;
+  justify-content: center;
 }
 
 .flight-card-right {
-  background-color: green;
+  /* background-color: green; */
+  display: flex;
+  flex-direction: column;
+  width: 10em;
+  align-items: center;
+  justify-content: center;
 }
+
+.flight-card-date {
+  font-size: var(--fs-700);
+  font-weight: bold;
+}
+
+.flight-card-terminal {
+  font-size: var(--fs-700);
+}
+
+.flight-card-link {
+  text-decoration: none;
+}
+
 
 #new-flight {
   display: flex;
@@ -32,4 +98,48 @@
 .show-flight {
   display: flex;
   flex-direction: column;
+}
+
+h1 {
+  color: var(--clr-primary-400);
+  font-size: var(--fs-900);
+  align-content: left;
+}
+
+.flight-detail-container {
+  height: 20em;
+  width: 20em;
+  background-color: red;
+  display: flex;
+
+}
+
+.flight-detail-container > div {
+  font-size: var(--fs-900);
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+
+  
+}
+
+.flight-list-header {
+  display: flex;
+  /* border: .3em solid blue; */
+  width: 28em;
+  align-items: center;
+  /* align-content: space-around; */
+  justify-content: space-around;
+}
+
+
+
+/*! buttons */
+
+.back {
+  font-size: var(--fs-300);
+  /* display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  left: auto; */
 }

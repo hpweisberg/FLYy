@@ -5,10 +5,10 @@ const Schema = mongoose.Schema
 const profileSchema = new Schema({
   name: String,
   avatar: String,
-  friendId: Number,
-  myFlight: { type: Schema.Types.ObjectId, ref: 'MyFlight'},
-  myJourney: { type: Schema.Types.ObjectId, ref: 'MyJourney'},
-  myFriends: [{ type: Schema.Types.ObjectId, ref: 'Profile'}],
+  friendId: { type: Schema.Types.UUID, auto: true },
+  flight: { type: Schema.Types.ObjectId, ref: 'Flight'},
+  journey: { type: Schema.Types.ObjectId, ref: 'Journey'},
+  friends: [{ type: Schema.Types.ObjectId, ref: 'Profile'}],
   blockedFriends: [{ type: Schema.Types.ObjectId, ref: 'Profile'}],
 }, {
   timestamps: true
