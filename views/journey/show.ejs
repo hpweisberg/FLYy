@@ -5,6 +5,8 @@
 <main>
   <h1>SHOW VIEW FOR JOURNEYYY</h1>
 
+  <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
+
   <h1><%= title %></h1>
   <% if (journey.owner.equals(user?.profile._id)) { %>
     <section class="show-journey">
@@ -13,13 +15,19 @@
       <div>Journey: </div>
       <div><%= journey.journeyPost %></div>
       <div>Owner: </div>
-      <div><%= journey.owner %></div>
+      <div><%= user.profile.name %></div>
       
       
       <a href="/journey/<%= journey._id %>/edit">
         <button class="edit-btn">Edit</button>
       </a>
     </section>
+
+    <form action="/journey/<%= journey._id %>?_method=DELETE" method="POST"
+      >
+      <button class="delete">X</button>
+    </form>
+
   <% } %>
 
   <a href="/journey" class="back">Go back</a>

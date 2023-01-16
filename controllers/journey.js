@@ -46,6 +46,20 @@ function show(req, res){
   })
 }
 
+function edit(req, res){
+  Journey.findById(req.params.id)
+  .then(journey => {
+    res.render('journey/edit', {
+      title: 'Edit Journey',
+      journey,
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/')
+  })
+}
+
 
 function updateJourney(req, res){
   Journey.findByIdAndUpdate(req.params.id, req.body, {new:true})
@@ -58,11 +72,25 @@ function updateJourney(req, res){
   })
 }
 
+
+function deleteJourney(req, res){
+  Journey.findByIdAndDelete(req.params.id)
+  .then(journey => {
+    res.redirect('/journey')
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/')
+  })
+}
+
 export {
   index,
   newJourney as new,
   create,
   show,
+  edit,
   updateJourney as update,
+  deleteJourney as delete,
 
 }

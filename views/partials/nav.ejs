@@ -4,13 +4,15 @@
 </head>
 <body>
   <nav>
-    <div class="logo-pic" class="">FLYy</div>
-    <nav class="primary-header">
-      <ul role="list" class="nav-list">
-        <li><a href="/flights">myFlights</a></li>
-        <li><a href="/friends">myFriends</a></li>
-        <li><a href="/journey">myJourney</a></li>
-      </ul>
+    <a href="/">
+      <div class="logo-pic" class="">FLYy</div>
+    </a>
+      <nav class="primary-header">
+        <ul role="list" class="nav-list">
+          <li><a href="/flights">myFlights</a></li>
+          <li><a href="/friends">myFriends</a></li>
+          <li><a href="/journey">myJourney</a></li>
+        </ul>
     </nav>
     <% if (user) { %>
       <a href="/auth/logout" class="logout-btn">

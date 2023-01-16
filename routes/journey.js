@@ -9,8 +9,11 @@ router.get('/', journeyCtrl.index)
 // GET /journey/
 router.get('/new/', journeyCtrl.new)
 
-// GET /flights/:id
+// GET /journey/:id
 router.get('/:id', journeyCtrl.show)
+
+// GET /journey/:id/edit
+router.get('/:id/edit', journeyCtrl.edit)
 
 // POST /journey/
 router.post('/', journeyCtrl.create)
@@ -18,6 +21,8 @@ router.post('/', journeyCtrl.create)
 // PUT /journey/:id
 router.put('/:id', journeyCtrl.update)
 
+// DELETE /journey/:id
+router.delete('/:id', journeyCtrl.delete)
 
 export {
   router
