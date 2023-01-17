@@ -5,10 +5,10 @@ html {
 :root {
 
   /* ! Font Colors */
-  --clr-accent-400: hsl(12, 88%, 59%); 
-  --clr-accent-100: hsl(13, 100%, 96%);
+  --clr-accent-400: hsl(12, 78%, 50%); 
+  --clr-accent-100: hsl(12, 77%, 81%);
 
-  --clr-primary-400: hsl(228, 39%, 23%);
+  --clr-primary-400: hsl(189, 94%, 53%);
   
   --clr-neutral-900: hsl(232, 12%, 13%);
   --clr-neutral-100: hsl(0, 0%, 100%);
@@ -116,8 +116,9 @@ nav {
   color: #1a1a1a;
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: 0px;
   min-height: 60px;
+  padding: 0 3em;
 }
 
 main {
@@ -156,4 +157,10 @@ main {
 .nav-list > li {
   padding: 0 1em;
   list-style-type: none;
+}
+
+.logo-pic {
+  text-decoration: none;
+  font-size: var(--fs-700);
+  color: var(--clr-accent-400);
 }

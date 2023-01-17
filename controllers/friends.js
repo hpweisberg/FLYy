@@ -15,6 +15,26 @@ function index(req, res){
   })
 }
 
+function newFriend(req, res){
+  // const newFlight = new Flight()
+  // const dt = newFlight.flightDate
+  // const departsDate = dt.toISOString().slice(0, 16)
+  Profile.find({})
+  .then(profile => {
+    res.render('friends/new', {
+      title: 'Add Friend',
+      Profile,
+      // flightDate: departsDate,
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
+
 export {
   index,
+  newFriend as new
 }

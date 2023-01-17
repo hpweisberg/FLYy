@@ -39,7 +39,7 @@
   flex-direction: row;
   height: 8em;
   width: 24em;
-  color: var(--clr-primary-400);
+  color: var(--clr-neutral-900);
 }
 
 
@@ -150,12 +150,20 @@ h1 {
 .flight-detail-mid {
   background-color: green;
   display: flex;
+  font-size: var(--fs-800);
   
 }
 
+
 .flight-detail-bottom {
   background-color: orange;
+  display: flex;
 
+}
+
+.flight-detail-bottom-elements {
+  display: flex;
+  flex-direction: column;
 }
 
 .big-date {

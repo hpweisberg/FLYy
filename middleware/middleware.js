@@ -10,11 +10,14 @@ function isLoggedIn(req, res, next) {
 }
 
 // function makeFriendCode(req, res, next){
-//   if (req.user)
+//   if (req.profile.friendId === null){
+//     console.log(uuid())
+//   }
 // }
 
 
 export {
   passDataToView,
   isLoggedIn,
+  // makeFriendCode
 }
