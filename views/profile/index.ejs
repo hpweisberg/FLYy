@@ -5,7 +5,11 @@
 <main>
 <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
 
-<h1>Friend Code: <p><%= profile.friendId %></p></h1>
+<a href="/auth/logout" class="logout-btn">
+  <button type="submit">Logout</button>
+</a>
+
+<h1>Friend Code: <%= profile.friendId %></h1>
 
 
 

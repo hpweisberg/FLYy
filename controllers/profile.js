@@ -15,21 +15,6 @@ function index(req, res){
   })
 }
 
-function show(req, res){
-  Profile.findById(req.params.id)
-  .then(profile => {
-    res.render('profile/show', {
-      title: 'Profile Detail',
-      profile,
-    })
-  })
-  if (Profile.friendId) {
-    return
-  } else {
-    let uuid = uuid()
-    Profile.friendId.push(uuid)
-}
-}
 
 // function edit(req, res){
 //   // req.body.owner = req.user.profile._id

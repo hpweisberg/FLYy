@@ -9,9 +9,7 @@
   </div>
 
 
-
-
-  <form action="/profile" id="new-friend" method="POST">
+  <form action="/friends/updateFriendList?_method=PATCH" id="new-friend" method="POST">
     <label for="friends">Friend ID Code:</label>
     <input type="string" id="new-friend" name="friends">
     <button type="submit">Add Friend</button>
