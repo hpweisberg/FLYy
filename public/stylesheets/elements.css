@@ -106,22 +106,6 @@ h1 {
   align-content: left;
 }
 
-.flight-detail-container {
-  height: 20em;
-  width: 20em;
-  background-color: red;
-  display: flex;
-
-}
-
-.flight-detail-container > div {
-  font-size: var(--fs-900);
-  display: flex;
-  justify-content: center;
-  /* align-items: center; */
-
-  
-}
 
 .flight-list-header {
   display: flex;
@@ -132,6 +116,52 @@ h1 {
   justify-content: space-around;
 }
 
+
+/* ! Flight Details Box */
+
+.flight-detail-container {
+  height: 25em;
+  width: 25em;
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.select-flight-to-view-more {
+  font-size: var(--fs-900);
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+
+  
+}
+
+.flight-detail-top {
+  background-color: blue;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.flight-detail-airline {
+  justify-content: flex-end;
+}
+
+.flight-detail-mid {
+  background-color: green;
+  display: flex;
+  
+}
+
+.flight-detail-bottom {
+  background-color: orange;
+
+}
+
+.big-date {
+  font-size: 6em;
+  width: 80%;
+}
 
 
 /*! buttons */

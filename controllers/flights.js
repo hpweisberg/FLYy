@@ -41,15 +41,30 @@ function create(req, res){
   })
 }
 
-function show(req, res){
-  Flight.findById(req.params.id)
-  .then(flight => {
+function show(req, res) {
+  Flight.find({})
+  .then(flights => {
+    const flight = flights.find(item => item._id.equals(req.params.id))
+    console.log(flight)
     res.render('flights/show', {
-      title: 'Flight Detail',
+      flights,
       flight,
+      title: 'Flight Details'
     })
   })
 }
+
+// function show(req, res){
+//   Flight.findById(req.params.id)
+//   .then(flight => {
+//     res.render('flights/show', {
+//       title: 'Flight Detail',
+//       flight,
+//       // flights,
+//     })
+//   })
+//   Flight.find({})
+// }
 
 function edit(req, res){
   Flight.findById(req.params.id)
