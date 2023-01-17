@@ -1,8 +1,9 @@
 import { Profile } from "../models/profile.js";
 
 function index(req, res){
-  Profile.find({})
+  Profile.findById(req.user.profile)
   .then(profile => {
+    console.log(profile, "index")
     res.render('profile/index', {
       profile,
       title: "Profile"

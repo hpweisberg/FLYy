@@ -19,11 +19,12 @@ function newFriend(req, res){
   // const newFlight = new Flight()
   // const dt = newFlight.flightDate
   // const departsDate = dt.toISOString().slice(0, 16)
-  Profile.find({})
+  Profile.find({_id:req.user.profile})
   .then(profile => {
+    console.log(profile)
     res.render('friends/new', {
       title: 'Add Friend',
-      Profile,
+      profile,
       // flightDate: departsDate,
     })
   })
@@ -33,8 +34,13 @@ function newFriend(req, res){
   })
 }
 
+function updateFriendList(req, res){
+
+}
+
 
 export {
   index,
-  newFriend as new
+  newFriend as new,
+  updateFriendList as update
 }
