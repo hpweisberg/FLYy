@@ -1,19 +1,29 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<main>
-  <h1>friendsss</h1>
+<main class="main-friend-container">
 
-  <div>
+  <section class="flight-list">
+    <div class="flight-list-header">
+    <a href="/" class="back-btn">Go back</a>
+    <h1>friendsss</h1>
     <a href="friends/new">click here to add a new friend.</a>
   </div>
 
+  
+
   <% profile.friends.forEach(friend => { %>
-    <!-- <% if (profile.equals(user?.profile._id)) { %> -->
+    <% if (profile.equals(user?.profile._id)) { %>
         
         <div class="friend-list">
-          <a class="friend-card-link" href="/friends/<%= friend._id %>"> <%= friend.name%> </a>
-          
+          <a class="friend-card-link" href="/friends/<%= friend._id %>"> 
+            <div class="flight-card">
+              <div class="flight-card-content">
+            <%= friend.name%> 
+            <%= friend._id%> 
+          </a>
+          </div>
+        </div>
 
 
           
@@ -21,7 +31,7 @@
         <!-- <% } %> -->
       <% }) %>
 
-
+  </section>
 </main>
 
 <%- include('../partials/footer') %>

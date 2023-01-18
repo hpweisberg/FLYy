@@ -1,5 +1,5 @@
 
-.main-flight-container, .main-journey-container {
+.main-flight-container, .main-journey-container, .main-friend-container {
   display: flex;
   flex-direction: row;
   gap: 5em;
@@ -206,7 +206,7 @@ h1 {
 .back {
   font-size: var(--fs-300);
   text-decoration: none;
-  background: url(../../assets/back-btn.png);
+  /* background: url(../../assets/back-btn.png); */
   /* display: flex;
   align-items: flex-end;
   justify-content: flex-start;
@@ -248,3 +248,4 @@ h1 {
 .jounrey-post {
   color: black
 }
+

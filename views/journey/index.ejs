@@ -8,8 +8,8 @@
     <h1>myJourney</h1>
   
     <a href="/journey/new">Add new Journey</a>
-    <% journey.forEach(journey => { %>
-      <% if (journey.owner.equals(user?.profile._id)) { %>
+    <% journeys?.forEach(journey => { %>
+      <% if (journeys.owner.equals(user?.profile._id)) { %>
         <div class="journey-card">
           <a href="/journey/<%= journey._id %>">
             

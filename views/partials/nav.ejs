@@ -4,7 +4,7 @@
 </head>
 <body >
   <nav>
-    <img src="../../assets/back-btn.png" alt="">
+    <!-- <img src="../../assets/back-btn.png" alt=""> -->
     <a href="/">
       <div class="logo-pic" class="">FLYy</div>
     </a>
@@ -16,13 +16,13 @@
         </ul>
     </nav>
     <% if (user) { %>
-      <a href="/profiles" class="profile-first-name">
+      <a href="/profiles/<%= user.profile._id %>" class="profile-first-name">
 
         <h1 class="profile-first-name"><%= user ? user.profile.name.split(' ').slice(0, -1) : "";
         %></h1>
       </a>
       <% if (user?.profile.avatar) { %>
-        <a href="/profiles">
+        <a href="/profiles/<%= user.profile._id %>">
           <img
           class="profile-pic"
           src="<%= user.profile.avatar %>"

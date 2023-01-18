@@ -41,8 +41,46 @@ function index(req, res){
 //   })
 // }
 
+function showProfile(req, res){
+  Profile.findById(req.params.id)
+  .populate('journeys')
+  .then(profile => {
+    res.render(`profiles/show`, {
+      title: `${profile.name}'s Profile`,
+      profile,
+    })
+  })
+  
+}
+
+function createJourney(req, res){
+  Profile.findById(req.user.profile._id)
+  .then(profile => {
+    profile.journeys.push(req.body)
+    profile.save()
+    .then(() => {
+      res.redirect(`/profiles/${profile._id}`)
+    })
+      .catch(error => {
+        console.log(error)
+        res.redirect('/')
+      })
+  })
+    .catch(error => {
+      console.log(error)
+      res.redirect('/')
+    })
+}
+
+
+
+
+
+
 export {
   index,
+  createJourney,
+  showProfile,
   // edit,
   // show,
   // updateFriendId as update,

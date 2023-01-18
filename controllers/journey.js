@@ -1,10 +1,13 @@
-import { Journey } from "../models/journey.js";
+import { Profile } from "../models/profile.js";
 
 function index(req, res){
-  Journey.find({})
-  .then(journey => {
+  // console.log(journey.owner)
+  Profile.findById(req.params.id)
+  .populate('journeys')
+  .then(journeys => {
     res.render('journey/index', {
-      journey,
+      journeys,
+      Profile,
       title: "Journey"
     })
   })
@@ -13,6 +16,20 @@ function index(req, res){
     res.redirect('/')
   })
 }
+// function index(req, res){
+//   console.log(journey.owner)
+//   Profile.find({})
+//   .then(journey => {
+//     res.render('journey/index', {
+//       journey,
+//       title: "Journey"
+//     })
+//   })
+//   .catch(err => {
+//     console.log(err)
+//     res.redirect('/')
+//   })
+// }
 
 function newJourney(req,res){
   res.render('journey/new', {
@@ -37,7 +54,7 @@ function create(req, res){
 }
 
 function show(req, res){
-  Journey.findById(req.params.id)
+  Profile.findById(req.params.id)
   .then(journey => {
     res.render('journey/show', {
       title: 'Journey Detail',
@@ -47,7 +64,7 @@ function show(req, res){
 }
 
 function edit(req, res){
-  Journey.findById(req.params.id)
+  Profile.findById(req.params.id)
   .then(journey => {
     res.render('journey/edit', {
       title: 'Edit Journey',
@@ -62,7 +79,7 @@ function edit(req, res){
 
 
 function updateJourney(req, res){
-  Journey.findByIdAndUpdate(req.params.id, req.body, {new:true})
+  Profile.findByIdAndUpdate(req.params.id, req.body, {new:true})
   .then(journey => {
     res.redirect(`/journey/${journey._id}`)
   })
@@ -74,7 +91,7 @@ function updateJourney(req, res){
 
 
 function deleteJourney(req, res){
-  Journey.findByIdAndDelete(req.params.id)
+  Profile.findByIdAndDelete(req.params.id)
   .then(journey => {
     res.redirect('/journey')
   })

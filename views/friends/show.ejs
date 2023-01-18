@@ -1,110 +1,20 @@
-<link rel="stylesheet" href="/stylesheets/elements.css">
+<!-- <link rel="stylesheet" href="/stylesheets/landing.css"/> -->
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
 
-<main class="main-flight-container">
-  
+<main>
+<h1>hello, <%= user ? user.profile.name : "friend" %></h1>
+<h1>These are the deets for <%= profile.name %> </h1>
+<h1>These are the deets for <%= profile.flights %> </h1>
+<a href="/auth/logout" class="logout-btn">
+  <button type="submit">Logout</button>
+</a>
 
-  <section class="flight-list">
-    <div class="flight-list-header">
-    <a href="/" class="back">Go back</a>
+<h1>Friend Code: <%= profile.friendId %></h1>
 
-      <h1>myFlights</h1>
-      
-      <a href="/flights/new">
-        <button>Add Flight</button>
-      </a>
-    </div>
 
-    <% flights.forEach(flight => { %>
-      <% if (flight.owner.equals(user?.profile._id)) { %>
-        <a class="flight-card-link" href="/flights/<%= flight._id %>">
-          <div class="flight-card">
-            <div class="flight-card-content">
-            
-            <div class=flight-card-left>
-              <span class="flight-card-date">
-                
-                <%= new Date(flight.flightDate).toLocaleDateString(undefined, {
-                  month: "short", day: "numeric"
-                }) %>
-                </span>
 
-                <span class="flight-card-logo">
-                  <%= flight.airline %> 
-                </span>
-              </div>
-              <div class=flight-card-mid>
-                <div class="flight-card-terminal">
-                  <%= flight.departureAirport %> 
-                </div>
-
-            <div class="flight-card-text">Departs: </div>
-                <%= (flight.departureTime).toLocaleDateString(undefined, {
-                  hour: "numeric", minute: "numeric"
-                }).slice(-7) %>
-          </div>
-          
-          <div class=flight-card-right>
-            <div class="flight-card-terminal">
-              <%= flight.arrivalAirport %> 
-            </div>
-            <div class="flight-card-text">Arrives: </div>
-                  <%= (flight.arrivalTime).toLocaleDateString(undefined, {
-                    hour: "numeric", minute: "numeric"
-                  }).slice(-7) %> 
-              </div>
-            </div>
-          </a>
-          </div>
-          <% } %>
-          <% }) %>        
-    </div>
-  </section>
-
-  <section class="flight-detail-container">
-    <a href="/flights/<%= flight._id %>/edit">
-      <button class="edit-btn">Edit</button>
-    </a>
-      <div class="flight-detail-top">
-        <div class="big-date"><%= new Date(flight.flightDate).toLocaleDateString(undefined, {
-          month: "short", day: "numeric"
-        }) %></div>
-        <div class="flight-detail-airline"><%= flight.airline %></div>
-      </div>
-
-      <div class="flight-detail-mid">
-
-        <div><%= flight.departureAirport %></div>
-
-        <div><%= flight.arrivalAirport %></div>
-      </div>
-      
-      <div class="flight-detail-bottom">
-        <div class="flight-detail-bottom-elements">
-          <div>Flight Number: </div>
-          <div><%= flight.flightNo %></div>
-        </div>
-        <div class="flight-detail-bottom-elements">
-          <div>Departs: </div>
-          <div>
-            <%= (flight.departureTime).toLocaleDateString(undefined, {
-              hour: "numeric", minute: "numeric"}).slice(-7) %>
-        </div>
-      </div>
-      <div class="flight-detail-bottom-elements">
-      <div>Arrival: </div>
-      <div><%= 
-      (flight.arrivalTime).toLocaleDateString(undefined, {
-        hour: "numeric", minute: "numeric"
-      }).slice(-7) %> </div>
-      </div>
-    </div>
-      
-    </section>
-
-</main>
 
 
 <%- include('../partials/footer') %>

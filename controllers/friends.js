@@ -90,7 +90,7 @@ function friendDetail(req, res){
     //access friends profile
     Profile.findById(req.params.id)
     .then(profile => {
-      res.render('profiles/show', {
+      res.render('friends/show', {
         title: "friend details",
         profile,
       })

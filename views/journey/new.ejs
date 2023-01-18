@@ -5,7 +5,7 @@
 
   <h1>Add a new Journey</h1>
 
-  <form action="/journey" id="new-journey" method="POST">
+  <form action="/profiles/<%= profile._id %>/journeys" id="new-journey" method="POST">
     <label for="journeyDate">Date:</label>
     <input type="date" id="journeyDate" name="journeyDate">
 

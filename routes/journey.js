@@ -1,28 +1,29 @@
 import { Router } from 'express'
 import * as journeyCtrl from '../controllers/journey.js'
+import { isLoggedIn } from '../middleware/middleware.js'
 
 const router = Router()
 
 // GET /journey/
-router.get('/', journeyCtrl.index)
+router.get('/', isLoggedIn, journeyCtrl.index)
 
 // GET /journey/
-router.get('/new/', journeyCtrl.new)
+router.get('/new/', isLoggedIn, journeyCtrl.new)
 
 // GET /journey/:id
-router.get('/:id', journeyCtrl.show)
+router.get('/:id', isLoggedIn, journeyCtrl.show)
 
 // GET /journey/:id/edit
-router.get('/:id/edit', journeyCtrl.edit)
+router.get('/:id/edit', isLoggedIn, journeyCtrl.edit)
 
 // POST /journey/
-router.post('/', journeyCtrl.create)
+router.post('/', isLoggedIn, journeyCtrl.create)
 
 // PUT /journey/:id
-router.put('/:id', journeyCtrl.update)
+router.put('/:id', isLoggedIn, journeyCtrl.update)
 
 // DELETE /journey/:id
-router.delete('/:id', journeyCtrl.delete)
+router.delete('/:id', isLoggedIn, journeyCtrl.delete)
 
 export {
   router
