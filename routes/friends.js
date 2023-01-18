@@ -8,8 +8,13 @@ router.get('/', friendsCtrl.index)
 
 router.get('/new', friendsCtrl.new)
 
+// GET /friends/:id
+router.get('/:id', friendsCtrl.show)
+
 // PATCH /friends/:id
 router.patch('/updateFriendList', friendsCtrl.update)
+
+
 
 export {
   router

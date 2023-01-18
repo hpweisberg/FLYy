@@ -103,11 +103,10 @@ html {
 
 
 body {
-  background-color: #222222;
+  background-color: rgb(251, 250, 245);
   color: #f6f6f6;
   /* Use a system font, if none are available use any found sans-sarif font */
-  font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
-    'Helvetica Neue', sans-serif;
+  font-family: 'Be Vietnam Pro', sans-serif;
   margin: 0;
 }
 
@@ -118,7 +117,8 @@ nav {
   align-items: center;
   padding: 0px;
   min-height: 60px;
-  padding: 0 3em;
+  padding: 0 0em;
+  justify-content: center;
 }
 
 main {
@@ -138,7 +138,6 @@ main {
   width: 3em;
   border-radius: 50%;
   margin-left: 1em;
-
 }
 
 .profile-first-name {
@@ -146,21 +145,31 @@ main {
   text-decoration: none;
   color: var(--clr-primary-400);
   align-items: flex-end;
+  padding-left: 2em;
   
   /* font-size: 18px; */
 }
 
 .nav-list {
   display: flex;
+  font-size: var(--fs-600);
 }
 
 .nav-list > li {
-  padding: 0 1em;
+  padding: 0 2.8em;
   list-style-type: none;
+  text-decoration: none;
+}
+
+.primary-header {
+  text-decoration: none; 
+
 }
 
 .logo-pic {
   text-decoration: none;
   font-size: var(--fs-700);
   color: var(--clr-accent-400);
+  padding-right: 3.8em;
+  
 }

@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="/stylesheets/elements.css">
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+
+
+<main>
+  <h1>SHOW PAGE HERE, <%= user ? user.profile.name : "friend" %></h1>
+  
+  <h1>Friend Code:</h1>
+  <div>
+    <%= profile.friendId ? `My friend code is + ${profile.friendId}` : 
+    "" %> 
+  </div>
+  
+  <form action="/profile/<%= profile._id %>?_method=PUT" id="friendId" method="POST">
+    <label for="friendId">Friend ID:</label>
+    <input type="string" id="friendId" name="friendId">
+    <button type="submit">Create FriendId</button>
+  </form>
+  </main>
+
+
+<%- include('../partials/footer') %>

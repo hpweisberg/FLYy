@@ -1,18 +1,19 @@
 
-.main-flight-container {
+.main-flight-container, .main-journey-container {
   display: flex;
   flex-direction: row;
   gap: 5em;
+  
 
 }
 
-.flight-list {
+.flight-list, .journey-list {
   display: flex;
   flex-direction: column;
   width: 30em;
   height: 100vh;
   align-items: center;
-  
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   background-color: var(--clr-accent-100);
 }
 
@@ -22,14 +23,16 @@
   width: 28em;
   height: 9em;
   padding: 1em;
-  border-radius: 5%;
-  border: 3px solid black;
+  border-radius: 5px;
+  border: 1px solid black;
   align-items: stretch;
   justify-content: space-around;
   margin: .5em 0;
+  background-color: var(--clr-neutral-100);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.flight-card:hover {
+.flight-card:hover, .journey-card:hover {
   cursor: pointer;
   background-color: lightblue;
 }
@@ -44,7 +47,7 @@
 
 
 
-.flight-card-left {
+.flight-card-left, .journey-card-left {
   /* background-color: red; */
   display: flex;
   flex-direction: column;
@@ -76,6 +79,14 @@
   font-weight: bold;
 }
 
+.flight-card-logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background-color: red;
+}
+
 .flight-card-terminal {
   font-size: var(--fs-700);
 }
@@ -101,7 +112,7 @@
 }
 
 h1 {
-  color: var(--clr-primary-400);
+  color: var(--clr-neutral-900);
   font-size: var(--fs-900);
   align-content: left;
 }
@@ -122,17 +133,22 @@ h1 {
 .flight-detail-container {
   height: 25em;
   width: 25em;
-  background-color: red;
+  background-color: var(--clr-neutral-100);
+  color: var(--clr-neutral-900);
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  margin-bottom: 15em;
 }
 
 .select-flight-to-view-more {
-  font-size: var(--fs-900);
+  font-size: var(--fs-700);
   display: flex;
   justify-content: center;
-  /* align-items: center; */
+  align-items: center;
+  color: black;
+
 
   
 }
@@ -141,6 +157,7 @@ h1 {
   background-color: blue;
   display: flex;
   justify-content: flex-end;
+  flex-wrap: nowrap;
 }
 
 .flight-detail-airline {
@@ -148,16 +165,19 @@ h1 {
 }
 
 .flight-detail-mid {
-  background-color: green;
+  /* background-color: green; */
   display: flex;
   font-size: var(--fs-800);
-  
+  gap: 3em;
+  flex-direction: row;
+  padding-bottom: 1em;
 }
 
 
 .flight-detail-bottom {
   background-color: orange;
   display: flex;
+  gap: 25px;
 
 }
 
@@ -167,17 +187,60 @@ h1 {
 }
 
 .big-date {
-  font-size: 6em;
-  width: 80%;
+  font-size: 5em;
+  width: 75%;
+  padding: .8em 0 .2em 0;
 }
+
+
+/* ! New Flight */
+
+#new-flight {
+  color: black;
+}
+
 
 
 /*! buttons */
 
 .back {
   font-size: var(--fs-300);
+  text-decoration: none;
+  background: url(../../assets/back-btn.png);
   /* display: flex;
   align-items: flex-end;
   justify-content: flex-start;
   left: auto; */
+}
+
+.edit-btn-detials {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  
+}
+
+
+/* ! Friends */
+
+.friend-list {
+  color: black;
+}
+
+
+/* ! Journey */
+
+.journey-card {
+  display: flex;
+  flex-direction: column;
+  width: 28em;
+  height: 9em;
+  padding: 1em;
+  border-radius: 5px;
+  border: 1px solid black;
+  align-items: stretch;
+  justify-content: space-around;
+  margin: .5em 0;
+  background-color: var(--clr-neutral-100);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }

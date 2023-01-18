@@ -1,12 +1,17 @@
 import { Flight } from "../models/flight.js";
 import { Profile } from "../models/profile.js";
 
+
+        
+
 function index(req, res){
-  Flight.find({})
-  .then(friends => {
+  Profile.find({})
+  .then(profile => {
+    Profile.find({friends: req.body.friends})
     res.render('friends/index', {
-      friends,
-      title: "friends"
+      profile,
+      // friends,
+      title: "Friends"
     })
   })
   .catch(err => {
@@ -16,16 +21,12 @@ function index(req, res){
 }
 
 function newFriend(req, res){
-  // const newFlight = new Flight()
-  // const dt = newFlight.flightDate
-  // const departsDate = dt.toISOString().slice(0, 16)
   Profile.findById(req.user.profile)
   .then(profile => {
     console.log(profile)
     res.render('friends/new', {
       title: 'Add Friend',
       profile,
-      // flightDate: departsDate,
     })
   })
   .catch(err => {
@@ -56,14 +57,36 @@ function updateFriendList(req, res){
     })
   })
 }
-
+//TODO Add Friend
 // Find friend array in the profile
 // Add the input of the new friend ID to the Profile Model.
-// Save 
+// Save updated profile
+
+//! Compare Friends List
+
+// Look into the friends array
+// check if profile1 has profile2's firend code and profile2 has profile1's friend code.
+// If so ----->
+// push both friends profile's into each friends view
+
+function friendDetail(req, res){
+  if (Profile.friendId == Profile.friendId.Profile.friendId){
+
+    Profile.friendId.findById(req.body)
+    .then(friends => {
+      res.render('friend/show', {
+        title: "Friend Details",
+        flight,
+        journey,
+      })
+    })
+  }
+  }
 
 
 export {
   index,
   newFriend as new,
-  updateFriendList as update
+  updateFriendList as update,
+  friendDetail as show
 }

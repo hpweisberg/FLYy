@@ -1,13 +1,13 @@
+<link rel="stylesheet" href="/stylesheets/elements.css">
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<main>
-  <h1>testttttt</h1>
-  <h1>journey</h1>
-
-  <a href="/journey/new">Add new Journey</a>
-
+<main class="main-journey-container">
+  
   <section class="journey-list">
+    <h1>myJourney</h1>
+  
+    <a href="/journey/new">Add new Journey</a>
     <div class="journey-card">
       <% journey.forEach(journey => { %>
         <% if (journey.owner.equals(user?.profile._id)) { %>
@@ -15,8 +15,13 @@
             
             <div class=journey-card-left>
               <%= journey.owner.profile%> 
-              <%= journey.journeyDate %> 
-              <%= journey.journeyPost %> 
+              <%= new Date(journey.journeyDate).toLocaleDateString(undefined, {
+                month: "short", day: "numeric"
+              }) %>
+              <div class="journey-card-right">
+
+                <%= journey.journeyPost %> 
+              </div>
               
             </div>
           </a>
@@ -28,6 +33,11 @@
 
   </section>
 
+  <section class="flight-detail-container">
+    <div class="select-flight-to-view-more">
+      Please select a Journey to view addtional detials.
+    </div>
+  </section>
 </main>
 
 <%- include('../partials/footer') %>
