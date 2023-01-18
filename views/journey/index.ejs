@@ -8,9 +8,9 @@
     <h1>myJourney</h1>
   
     <a href="/journey/new">Add new Journey</a>
-    <div class="journey-card">
-      <% journey.forEach(journey => { %>
-        <% if (journey.owner.equals(user?.profile._id)) { %>
+    <% journey.forEach(journey => { %>
+      <% if (journey.owner.equals(user?.profile._id)) { %>
+        <div class="journey-card">
           <a href="/journey/<%= journey._id %>">
             
             <div class=journey-card-left>
@@ -25,11 +25,11 @@
               
             </div>
           </a>
+        </div>
           <% } %>
           <% }) %>
           
         
-    </div>
 
   </section>
 

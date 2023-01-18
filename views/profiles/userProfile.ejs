@@ -5,7 +5,7 @@
 
 
 <main>
-  <h1>SHOW PAGE HERE, <%= user ? user.profile.name : "friend" %></h1>
+  <h1>PROFILE FOR USER SHOW PAGE HERE, <%= user ? user.profile.name : "friend" %></h1>
   
   <h1>Friend Code:</h1>
   <div>
@@ -13,7 +13,9 @@
     "" %> 
   </div>
   
-  <form action="/profile/<%= profile._id %>?_method=PUT" id="friendId" method="POST">
+<h1>Friend Code: <%= profile.friendId %></h1>
+  
+  <form action="/profiles/<%= profile._id %>?_method=PUT" id="friendId" method="POST">
     <label for="friendId">Friend ID:</label>
     <input type="string" id="friendId" name="friendId">
     <button type="submit">Create FriendId</button>

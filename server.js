@@ -73,7 +73,7 @@ app.use('/auth', authRouter)
 app.use('/flights', flightsRouter)
 app.use('/friends', friendsRouter)
 app.use('/journey', journeyRouter)
-app.use('/profile', profileRouter)
+app.use('/profiles', profileRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -35,7 +35,14 @@ function create(req, res){
   req.body.owner = req.user.profile._id
   Flight.create(req.body)
   .then(flight => {
-    res.redirect('/flights')
+    Profile.findById(req.user.profile._id)
+    .then(profile => {
+      profile.flights.push(flight._id)
+      profile.save()
+      .then(() => {
+        res.redirect('/flights')
+      })
+    })
   })
   .catch(err => {
     console.log(err)

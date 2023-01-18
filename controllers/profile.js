@@ -4,14 +4,14 @@ function index(req, res){
   Profile.findById(req.user.profile)
   .then(profile => {
     console.log(profile, "index")
-    res.render('profile/index', {
+    res.render('profiles/userProfile', {
       profile,
       title: "Profile"
     })
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/profile')
+    res.redirect('/profiles')
   })
 }
 

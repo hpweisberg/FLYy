@@ -5,9 +5,10 @@ import { Profile } from "../models/profile.js";
         
 
 function index(req, res){
-  Profile.find({})
+  Profile.findById(req.user.profile._id)
+  .populate('friends')
   .then(profile => {
-    Profile.find({friends: req.body.friends})
+    // Profile.find({friends: req.body.friends})
     res.render('friends/index', {
       profile,
       // friends,
@@ -66,6 +67,7 @@ function updateFriendList(req, res){
 
 // Look into the friends array
 // check if profile1 has profile2's firend code and profile2 has profile1's friend code.
+//? if (Profile.friendId == Profile.friendId.Profile.friendId){
 // If so ----->
 // push both friends profile's into each friends view
 
@@ -84,9 +86,21 @@ function friendDetail(req, res){
   }
 
 
+  function show(req,res){
+    //access friends profile
+    Profile.findById(req.params.id)
+    .then(profile => {
+      res.render('profiles/show', {
+        title: "friend details",
+        profile,
+      })
+    })
+  }
+
+
 export {
   index,
   newFriend as new,
   updateFriendList as update,
-  friendDetail as show
+  show
 }

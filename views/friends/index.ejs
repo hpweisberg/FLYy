@@ -8,18 +8,19 @@
     <a href="friends/new">click here to add a new friend.</a>
   </div>
 
-  <% profile.forEach(profile => { %>
-    <% if (profile.equals(user?.profile._id)) { %>
+  <% profile.friends.forEach(friend => { %>
+    <!-- <% if (profile.equals(user?.profile._id)) { %> -->
         
         <div class="friend-list">
-          <a class="friend-card-link" href="/friends/<%= profile.friends._id %>"> <%= profile.friends%> </a>
+          <a class="friend-card-link" href="/friends/<%= friend._id %>"> <%= friend.name%> </a>
           
 
 
           
         </div>
-        <% } %>
+        <!-- <% } %> -->
       <% }) %>
+
 
 </main>
 

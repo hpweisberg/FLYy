@@ -16,13 +16,13 @@
         </ul>
     </nav>
     <% if (user) { %>
-      <a href="/profile" class="profile-first-name">
+      <a href="/profiles" class="profile-first-name">
 
         <h1 class="profile-first-name"><%= user ? user.profile.name.split(' ').slice(0, -1) : "";
         %></h1>
       </a>
       <% if (user?.profile.avatar) { %>
-        <a href="/profile">
+        <a href="/profiles">
           <img
           class="profile-pic"
           src="<%= user.profile.avatar %>"

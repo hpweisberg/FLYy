@@ -244,3 +244,7 @@ h1 {
   background-color: var(--clr-neutral-100);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
+.jounrey-post {
+  color: black
+}
