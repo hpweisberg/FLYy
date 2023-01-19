@@ -217,6 +217,14 @@ h1 {
   left: auto; */
 }
 
+.back-btn {
+  width: 2em;
+  height: 2em;
+  border: none;
+  background: none;
+  border-radius: 35%;
+}
+
 .edit-btn-detials {
   display: flex;
   align-items: flex-end;
@@ -253,3 +261,8 @@ h1 {
   color: black
 }
 
+/* ! New Flight */
+
+.new-flight-card {
+  background-color: red;
+}

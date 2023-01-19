@@ -3,8 +3,9 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1>Add a new flight</h1>
-
+  
+  <div class="new-flight-card">
+    <h1>Add a new flight</h1>
   <form action="/flights" id="new-flight" method="POST">
     <label for="flight-date">Date:</label>
     <input type="date" id="flight-date" name="flightDate">
@@ -25,11 +26,11 @@
       <option value="Hawaiian Airlines">Hawaiian Airlines</option>
     </select>
 
-    <label for="departure-airport">Departing:</label>
-    <input type="text" id="departure-airport" name="departureAirport">
+    <label for="departure-airport">Departing Airport:</label>
+    <input type="text" id="departure-airport" maxlength="3" name="departureAirport">
 
-    <label for="arrival-airport">Arriving:</label>
-    <input type="text" id="arrival-airport" name="arrivalAirport">
+    <label for="arrival-airport">Arriving Airport:</label>
+    <input type="text" id="arrival-airport" maxlength="3" name="arrivalAirport">
     
     <label for="departure-time">Departing Time:</label>
     <input type="datetime-local" id="departure-time" name="departureTime">
@@ -40,6 +41,8 @@
     <button type="submit">Add MyFlight</button>
 
   </form>
+
+</div>
 
   <a href="/flights" class="back">Go back</a>
 

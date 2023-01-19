@@ -3,33 +3,16 @@
 <%- include('../partials/nav') %>
 
 
-<main>
-<h1>hello, <%= user ? user.profile.name : "friend" %></h1>
-<h1>These are the deets for <%= profile.name %> </h1>
-<h1>These are the deets for <%= profile.flights %> </h1>
-<a href="/auth/logout" class="logout-btn">
-  <button type="submit">Logout</button>
-</a>
-
-<h1>Friend Code: <%= profile.friendId %></h1>
-
-<h1>Add a new Journey</h1>
-
-<form action="/profiles/<%= profile._id %>/journeys" id="new-journey" method="POST">
-  <label for="journeyDate">Date:</label>
-  <input type="date" id="journeyDate" name="journeyDate">
-
-  <label for="journeylPost">Journey Post:</label>
-  <input type="string" id="journeylPost" name="journeyPost">
-
-  <button type="submit">Add MyJourney</button>
-
-</form>
-
-<div class="main-journey-container">
+<main class="main-journey-container">
   
-  <section class="journey-list">
-    <h1>myJourney</h1>
+  
+
+    <section class="journey-list">
+  
+  <h1>myJourney</h1>
+  <a href="/auth/logout" class="logout-btn">
+    <button type="submit">Logout</button>
+  </a>
   
     <!-- <%# if (profile.journeys.owner.equals(user?.profile._id)) { %> -->
     <% profile.journeys?.forEach(journey => { %>
@@ -58,10 +41,19 @@
 
   <section class="flight-detail-container">
     <div class="select-flight-to-view-more">
-      Please select a Journey to view addtional detials.
+      <form action="/profiles/<%= profile._id %>/journeys" id="new-journey" method="POST">
+        <label for="journeyDate">Date:</label>
+        <input type="date" id="journeyDate" name="journeyDate">
+      
+        <label for="journeylPost">Journey Post:</label>
+        <input type="string" id="journeylPost" name="journeyPost">
+      
+        <button type="submit">Add MyJourney</button>
+        
+      </form>
     </div>
   </section>
-</div>
+</main>>
 
 
 
