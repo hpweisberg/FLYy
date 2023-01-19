@@ -24,7 +24,7 @@ import { router as indexRouter } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
 import { router as flightsRouter } from './routes/flights.js'
 import { router as friendsRouter } from './routes/friends.js'
-import { router as profileRouter } from './routes/profile.js'
+import { router as profileRouter } from './routes/profiles.js'
 
 // create the express app
 const app = express()

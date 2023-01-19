@@ -21,11 +21,14 @@ router.post('/:id/journeys', isLoggedIn, profileCtrl.createJourney)
 // GET
 router.get('/:profileId/journeys/:journeyId/edit', isLoggedIn, profileCtrl.editJourney)
 
+// GET /profiles/profileId/friends
 router.get('/:profileId/friends', isLoggedIn, profileCtrl.friendsIndex)
 
-router.get('/:id/friends/new', isLoggedIn, profileCtrl.newFriend)
+// GET /profiles/profileId/friends/new
+router.get('/:profileId/friends/new', isLoggedIn, profileCtrl.newFriend)
 
-router.get(':id/friends/:friendId', isLoggedIn, profileCtrl.showFriends)
+// GET /profile/profileId/friends/friendId
+router.get('/:profileId/friends/:friendId', isLoggedIn, profileCtrl.showFriends)
 
 router.put('/:profileId/journeys/:journeyId', isLoggedIn, profileCtrl.updateJourney)
 

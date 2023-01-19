@@ -180,7 +180,7 @@ function newFriend(req, res){
   Profile.findById(req.user.profile)
   .then(profile => {
     console.log(profile)
-    res.render('profile/friend/new', {
+    res.render('profiles/friends/new', {
       title: 'Add Friend',
       profile,
     })
@@ -210,16 +210,19 @@ function updateFriendList(req, res){
 }
 
 
-function showFriends(req,res){
+function showFriends(req, res){
   //access friends profile
-  Profile.findById(req.params.id)
+  Profile.findById(req.params.friendId)
+  .populate('flights')
   .then(profile => {
-    res.render('profile/friends/show', {
+    res.render(`profiles/friends/show`, {
       title: `${profile.name}'s Details`,
       profile,
     })
   })
 }
+
+
 
 
 export {
