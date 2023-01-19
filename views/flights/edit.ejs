@@ -9,7 +9,7 @@
 
   <form action="/flights/<%= flight._id %>?_method=PUT" id="edit-flight" method="POST">
     <label for="flight-date">Date:<%= new Date(flight.flightDate).toLocaleDateString() + " -- "  + new Date(flight.flightDate).toLocaleTimeString([], {timeStyle: 'short'})%> </label>
-    <input type="date" id="flight-date" name="flightDate">
+    <input type="date" id="flight-date" name="flightDate" required>
 
     <label for="flight-no">Flight Number:</label>
     <input type="number" value="<%= flight.flightNo %>" id="flight-no" name="flightNo">
@@ -35,10 +35,10 @@
     <input type="text" value="<%= flight.arrivalAirport %>" id="arrival-airport" name="arrivalAirport">
     
     <label for="departure-time">Departing Time: <%= new Date(flight.departureTime).toLocaleDateString() + " -- "  + new Date(flight.departureTime).toLocaleTimeString([], {timeStyle: 'short'})%> </label>
-    <input type="datetime-local" id="departure-time" value="<%= flight.departureTime %>" name="departureTime">
+    <input type="datetime-local" id="departure-time" value="<%= flight.departureTime %>" required name="departureTime">
     
     <label for="arrival-time" <%= new Date(flight.arrivalTime).toLocaleDateString() + " -- "  + new Date(flight.arrivalTime).toLocaleTimeString([], {timeStyle: 'short'})%>>Arrival Time: <%= new Date(flight.arrivalTime).toLocaleDateString() + " -- "  + new Date(flight.arrivalTime).toLocaleTimeString([], {timeStyle: 'short'})%> </label>
-    <input type="datetime-local" id="arrival-time" name="arrivalTime">
+    <input type="datetime-local" id="arrival-time" required name="arrivalTime">
 
     <button type="submit">Update MyFlight</button>
   </form>

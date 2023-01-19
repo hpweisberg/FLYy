@@ -1,4 +1,5 @@
 import { Flight } from "../models/flight.js";
+import { Profile } from "../models/profile.js";
 
 
 
@@ -37,6 +38,7 @@ function create(req, res){
   .then(flight => {
     Profile.findById(req.user.profile._id)
     .then(profile => {
+      console.log(profile)
       profile.flights.push(flight._id)
       profile.save()
       .then(() => {

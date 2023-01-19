@@ -112,6 +112,29 @@ function deleteJourney(req, res){
   })
 }
 
+function updateJourney(req, res){
+  Profile.findById(req.params.profileId)
+  .then(profile => {
+    const journeyDoc = profile.journeys.id(req.params.journeyId)
+    if (journeyDoc.journeyCreator.equals(req.user.profile._id)) {
+      journeyDoc.set(req.body)
+      profile.save()
+      .then(() => {
+        res.redirect(`/profiles/${profile._id}`)
+      })
+      .catch(err => {
+        console.log(err)
+        res.redirect('/profiles')
+      })
+    } else {
+      throw new Error('🚫 Not authorized 🚫')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/profiles')
+  })
+}
 
 
 
@@ -121,6 +144,7 @@ export {
   showProfile,
   editJourney,
   deleteJourney,
+  updateJourney,
   // edit,
   // show,
   // updateFriendId as update,

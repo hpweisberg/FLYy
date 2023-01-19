@@ -21,6 +21,10 @@ router.post('/:id/journeys', isLoggedIn, profileCtrl.createJourney)
 // GET
 router.get('/:profileId/journeys/:journeyId/edit', isLoggedIn, profileCtrl.editJourney)
 
+
+router.put('/:profileId/journeys/:journeyId', isLoggedIn, profileCtrl.updateJourney)
+
+
 router.delete('/:profileId/journeys/:journeyId', isLoggedIn, profileCtrl.deleteJourney)
 
 // PUT /profile/:id
