@@ -17,6 +17,17 @@
   border: none;
   background: none;
   font-size: var(--fs-900);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: var(--clr-neutral-100);
+}
+
+.lading-page-btns:hover {
+  color: var(--clr-accent-400);
 }
 
 .flight-list, .journey-list {
@@ -266,6 +277,59 @@ h1 {
 .add-btn {
   height: 3em;
   width: 3em;
+}
+
+.landing-btn {
+  text-decoration: none;
+  height: 100%;
+  width: 100%;
+}
+
+.landing-btn:hover {
+  text-decoration: underline;
+  color: var(--clr-primary-400);
+}
+
+.flights-bg-img{
+  background-image: url(/assets/flight_photo_1.jpeg), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+  background-blend-mode: overlay;
+  width: 100%;
+  overflow: hidden;
+  background-size: cover;
+  background-position: 70%;
+}
+
+.flights-bg-img:hover {
+  background-image: url(/assets/flight_photo_1.jpeg), linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0));
+  background-blend-mode: overlay;
+}
+
+.friends-bg-img{
+  background-image: url(/assets/flight_photo_2.jpeg), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+  background-blend-mode: overlay;
+  width: 100%;
+  overflow: hidden;
+  background-size: cover;
+  background-position: 48%;
+}
+
+.friends-bg-img:hover {
+  background-image: url(/assets/flight_photo_2.jpeg), linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0));
+  background-blend-mode: overlay;
+}
+
+.journey-bg-img{
+  background-image: url(/assets/flight_photo_3.png), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+  background-blend-mode: overlay;
+  width: 100%;
+  overflow: hidden;
+  background-size: cover;
+  background-position: 70%;
+}
+
+.journey-bg-img:hover {
+  background-image: url(/assets/flight_photo_3.png), linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0));
+  background-blend-mode: overlay;
 }
 
 

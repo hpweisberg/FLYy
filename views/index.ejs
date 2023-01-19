@@ -5,16 +5,22 @@
 
 <section class="main-container">
     <% if (user) { %>
-    <a href="/flights">
-      <button class="lading-page-btns">MyFlights</button>
+    <a class="landing-btn" href="/flights">
+      <div class="flights-bg-img">
+        <button class="lading-page-btns">MyFlights</button>
+      </div>
     </a>
       <div class="line"></div>
-      <a href="/profiles/<%= user?.profile._id %>/friends">
-        <button class="lading-page-btns">MyFriends</button>
+      <a class="landing-btn" href="/profiles/<%= user?.profile._id %>/friends">
+        <div class="friends-bg-img">
+          <button class="lading-page-btns">MyFriends</button>
+        </div>
       </a>
       <div class="line"></div>
-        <a href="profiles/<%= user?.profile._id %> ">
-          <button class="lading-page-btns">MyJourney</button>
+        <a class="landing-btn" href="profiles/<%= user?.profile._id %> ">
+          <div class="journey-bg-img">
+            <button class="lading-page-btns">MyJourney</button>
+          </div>
           </a>
           <% } else { %>
             <h1>Please Log In or Create Account</h1>
