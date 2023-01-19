@@ -1,20 +1,52 @@
 <%- include('../../partials/html-head') %>
 <%- include('../../partials/nav') %>
 
-<main>
+<main class="main-journey-container">
+  
+  
 
-  <h1>Edit a new Journey</h1>
+  <section class="journey-list">
 
-  <form action="/profiles/<%= profile._id %>/journeys/<%= journey._id %>?_method=PUT" id="edit-journey" method="POST">
-    <label for="journeyDate">Date: <%= journey.journeyDate %></label>
-    <input type="date" value="<%= journey.journeyDate %>"  id="journeyDate" name="journeyDate">
+<h1> Edit myJourney</h1>
+<a href="/auth/logout" class="logout-btn">
+  <button type="submit">Logout</button>
+</a>
 
-    <label for="journeylPost">Journey Post:</label>
-    <input type="string" value="<%= journey.journeyPost %> " id="new-journey" name="journeyPost">
+  <!-- <%# if (profile.journeys.owner.equals(user?.profile._id)) { %> -->
+  <% profile.journeys?.forEach(journey => { %>
+      <div class="journey-card">
+        <div class="flight-card-content">
+        <a href="/profiles/<%= profile._id %>/journeys/<%= journey._id %>/edit">
+          
+          <div class=journey-card-left>
+            <span class="journey-card-date"> <%= new Date(journey.journeyDate).toLocaleDateString(undefined, {
+              month: "short", day: "numeric"
+            }) %> </span>
+            </div>
+            <div class="journey-card-right">
 
-    <button type="submit">Update MyJourney</button>
+              <%= journey.journeyPost %> 
+            
+          </div>
+        </a>
+        </div>
+      </div>
+      <% }) %>
 
-  </form>
+
+  <section class="flight-detail-container">
+    <div class="select-flight-to-view-more">
+      <form action="/profiles/<%= profile._id %>/journeys/<%= journey._id %>?_method=PUT" id="edit-journey" method="POST">
+        <label for="journeyDate">Date: <%= journey.journeyDate %></label>
+        <input type="date" value="<%= journey.journeyDate %>"  id="journeyDate" name="journeyDate">
+
+        <label for="journeylPost">Journey Post:</label>
+        <input type="string" value="<%= journey.journeyPost %> " id="new-journey" name="journeyPost">
+
+        <button type="submit">Update MyJourney</button>
+
+      </form>
+
 
   <% if (journey.journeyCreator._id.equals(user?.profile._id)) { %>
     <form action="/profiles/<%= profile._id %>/journeys/<%= journey._id %>?_method=DELETE" method="POST">

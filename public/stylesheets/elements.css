@@ -29,7 +29,7 @@
   background-color: var(--clr-accent-100);
 }
 
-.flight-card {
+.flight-card, .friend-flight-card {
   display: flex;
   flex-direction: column;
   width: 28em;
@@ -275,7 +275,7 @@ h1 {
 
 .journey-card {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 28em;  
   height: 9em;
   padding: 1em;
@@ -286,10 +286,34 @@ h1 {
   margin: .5em 0;
   background-color: var(--clr-neutral-100);
   box-shadow: rgba(5, 217, 255, 0.24) 0px 3px 8px;
+  text-decoration: none;
+}
+
+
+
+
+
+.journey-card-left {
+  display: flex;
+  font-size: var(--fs-300);
+  /* background-color: blue; */
+}
+
+.journey-card-right {
+  /* background-color: red; */
+  width: 5em;
+}
+
+.journey-card-date {
+  font-size: var(--fs-800);
 }
 
 .jounrey-post {
   color: black
+}
+
+.friend-journey-date {
+  font-size: var(--fs-800);
 }
 
 /* ! New Flight */
