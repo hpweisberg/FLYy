@@ -11,6 +11,8 @@ const flightSchema = new Schema({
   arrivalAirport: String,
   departureTime: Date,
   arrivalTime: Date,
+  departureTerminal: String,
+  arrivalTerminal: String,
   isFlying: Boolean,
   arrivalWeather: String,
 }, {

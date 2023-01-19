@@ -75,27 +75,35 @@
       </div>
 
       <div class="flight-detail-mid">
+        <div class="flight-detail-mid-departure">
+          <div class="flight-detail-airport-code"><%= flight.departureAirport %></div>
+          <div class="flight-detail-terminal">Terminal: <%= flight.departureTerminal %> </div>
+        </div>
 
-        <div><%= flight.departureAirport %></div>
+        <div><img src="../../public/assets/Arrow_right.svg.png" alt=""></div>
+        
+      <div class="flight-detail-mid-arrival">
+        <div class="flight-detail-airport-code"><%= flight.arrivalAirport %></div>
+        <div class="flight-detail-terminal">Terminal: <%= flight.arrivalTerminal %> </div>
+      </div>
 
-        <div><%= flight.arrivalAirport %></div>
       </div>
       
       <div class="flight-detail-bottom">
         <div class="flight-detail-bottom-elements">
           <div>Flight Number: </div>
-          <div><%= flight.flightNo %></div>
+          <div class="flight-detail-bottom-bold"><%= flight.flightNo %></div>
         </div>
         <div class="flight-detail-bottom-elements">
           <div>Departs: </div>
-          <div>
+          <div class="flight-detail-bottom-bold">
             <%= (flight.departureTime).toLocaleDateString(undefined, {
               hour: "numeric", minute: "numeric"}).slice(-7) %>
         </div>
       </div>
       <div class="flight-detail-bottom-elements">
       <div>Arrival: </div>
-      <div><%= 
+      <div class="flight-detail-bottom-bold"><%= 
       (flight.arrivalTime).toLocaleDateString(undefined, {
         hour: "numeric", minute: "numeric"
       }).slice(-7) %> </div>

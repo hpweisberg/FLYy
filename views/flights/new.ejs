@@ -2,16 +2,17 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<main>
+<main class="main-new-flight-container">
   
   <div class="new-flight-card">
+    <a href="/flights" class="back">Go back</a>
     <h1>Add a new flight</h1>
   <form action="/flights" id="new-flight" method="POST">
     <label for="flight-date">Date:</label>
-    <input type="date" id="flight-date" name="flightDate">
+    <input type="date" required id="flight-date" name="flightDate">
 
     <label for="flight-no">Flight Number:</label>
-    <input type="number" id="flight-no" name="flightNo">
+    <input type="number" required placeholder="312" id="flight-no" name="flightNo">
 
     <label for="airline">Airline:</label>
     <select id="airline" name="airline">
@@ -27,24 +28,29 @@
     </select>
 
     <label for="departure-airport">Departing Airport:</label>
-    <input type="text" id="departure-airport" maxlength="3" name="departureAirport">
-
-    <label for="arrival-airport">Arriving Airport:</label>
-    <input type="text" id="arrival-airport" maxlength="3" name="arrivalAirport">
+    <input type="text" required placeholder="JFK" id="departure-airport" maxlength="3" name="departureAirport">
     
     <label for="departure-time">Departing Time:</label>
-    <input type="datetime-local" id="departure-time" name="departureTime">
+    <input type="datetime-local" required id="departure-time" name="departureTime">
+    
+    <label for="departure-Terminal">Departing Terminal:</label>
+    <input type="text" placeholder="5" required id="departure-time" name="departureTerminal">
+    
+    <label for="arrival-airport">Arriving Airport:</label>
+    <input type="text" placeholder="LAX" required id="arrival-airport" maxlength="3" name="arrivalAirport">
+    
     
     <label for="arrival-time">Arrival Time:</label>
-    <input type="datetime-local" id="arrival-time" name="arrivalTime">
-
+    <input type="datetime-local" required id="arrival-time" name="arrivalTime">
+    
+    <label for="arrival-Terminal">Departing Terminal:</label>
+    <input type="text" placeholder="4" required id="arrival-Terminal" name="arrivalTerminal">
+    
     <button type="submit">Add MyFlight</button>
 
   </form>
 
 </div>
-
-  <a href="/flights" class="back">Go back</a>
 
 </main>
 
