@@ -263,12 +263,31 @@ h1 {
   
 }
 
+.add-btn {
+  height: 3em;
+  width: 3em;
+}
+
 
 /* ! Friends */
+
+.friend-code{
+  text-align: center;
+  border: 2px solid black;
+  background-color: var(--clr-background-100);
+}
 
 .friend-list {
   color: black;
 }
+
+.friend-card-content {
+  display: flex;
+  flex-direction: row;
+  font-size: var(--fs-800);
+}
+
+
 
 
 /* ! Journey */
@@ -328,4 +347,24 @@ h1 {
 
 label {
   padding-top: .6em;
+}
+
+
+/* ! Nav Bar */
+
+
+
+.logo-pic {
+  /* background-image: url("../images/flly_logo.png"); */
+  height: 70px;
+  /* width: 1000px; */
+  object-fit: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-pic > img {
+  max-height: 90%;
 }

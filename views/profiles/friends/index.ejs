@@ -5,16 +5,18 @@
 
   <section class="flight-list">
     <div class="flight-list-header">
-    <a href="/" class="back-btn">
-      <button>
+      <button class="back-btn" onclick="window.history.back()">
         <img class="back-btn" src="../../../assets/back-btn.png" alt="">
       </button>
-    </a>
     <h1>myFriends</h1>
     <a href="/profiles/<%= user?.profile._id %>/friends/new">click here to add a new friend.</a>
+          <button class="add-btn" onclick="window.history.back()">
+        <img class="add-btn" src="../../../assets/add-btn.png" alt="">
+      </button>
 
   </div>
-  <h1>Friend Code: <%= profile.friendId %></h1>
+  <h1 class="friend-code">Friend Code: <br>
+    <%= profile.friendId %></h1>
 
   
 
@@ -24,13 +26,15 @@
         <div class="friend-list">
           <a class="friend-card-link" href="/profiles/<%= user?.profile._id %>/friends/<%= friend._id %>"> 
             <div class="flight-card">
-              <div class="flight-card-content">
-            <%= friend.name%> 
-            <%= friend._id %>
-            <%= friend.flights.airline %>  
-            <% friend.flights.forEach(flight => { %>
-              <%= flight.airline %> 
-            <% }) %>
+              <div class="friend-card-content">
+                <p>
+                  <%= friend.name%> 
+
+                </p>
+            <p>
+              <%= profile.flights.length %> upcoming flights 
+            </p>
+
             <!-- <%# friend.flights%>  -->
           </a>
           </div>

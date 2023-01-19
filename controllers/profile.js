@@ -141,6 +141,7 @@ function updateJourney(req, res){
 function friendsIndex(req, res){
   Profile.findById(req.user.profile._id)
   .populate('friends')
+  .populate('flights')
   .then(profile => {
     
     // const friendsDoc = profile.friends?.id(req.body.friendId)
