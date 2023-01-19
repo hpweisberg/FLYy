@@ -12,6 +12,8 @@ html {
   
   --clr-neutral-900: hsl(232, 12%, 13%);
   --clr-neutral-100: hsl(0, 0%, 100%);
+  
+  --clr-background-100: hsl(0, 10%, 88%);
 
   --ff-primary: font-family: 'Be Vietnam Pro', sans-serif;
 
@@ -159,6 +161,7 @@ main {
   padding: 0 2.8em;
   list-style-type: none;
   text-decoration: none;
+  font-size: var(--fs-600);
 }
 
 .primary-header {
@@ -171,5 +174,7 @@ main {
   font-size: var(--fs-700);
   color: var(--clr-accent-400);
   padding-right: 3.8em;
-  
+  /* background-image: url(../assets/flly_logo.png); */
+
+
 }

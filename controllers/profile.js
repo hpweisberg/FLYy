@@ -2,10 +2,12 @@ import { Profile } from "../models/profile.js";
 
 function index(req, res){
   Profile.findById(req.user.profile)
+  .populate('flights')
   .then(profile => {
     console.log(profile, "index")
     res.render('profiles/userProfile', {
       profile,
+      // flights,
       title: "Profile"
     })
   })
@@ -136,6 +138,88 @@ function updateJourney(req, res){
   })
 }
 
+function friendsIndex(req, res){
+  Profile.findById(req.user.profile._id)
+  .populate('friends')
+  .then(profile => {
+    
+    // const friendsDoc = profile.friends?.id(req.body.friendId)
+    res.render('profiles/friends/index', {
+      profile,
+      title: "Friends",
+      // friend: friendsDoc
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+// if (journeyDoc.journeyCreator.equals(req.user.profile._id)) 
+// function editJourney(req, res){
+//   Profile.findById(req.user.profile._id)
+//   .then(profile => {
+//     console.log(profile, 'THIS IS MY COMMENT')
+//     const journeyDoc = profile.journeys?.id(req.params.journeyId)
+//     if (journeyDoc.journeyCreator.equals(req.user.profile._id)) {
+//       res.render('profiles/journeys/editJourney', {
+//         profile,
+//         journey: journeyDoc,
+//         title: 'Edit Journey'
+//       })
+//     }
+
+//   })
+// }
+
+
+
+
+
+function newFriend(req, res){
+  Profile.findById(req.user.profile)
+  .then(profile => {
+    console.log(profile)
+    res.render('profile/friend/new', {
+      title: 'Add Friend',
+      profile,
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
+function updateFriendList(req, res){
+  Profile.findById(req.user.profile._id)
+  .then(userProfile => {
+    Profile.findOne({friendId: req.body.friends})
+    .then(friendProfile => {
+      userProfile.friends.push(friendProfile._id)
+      userProfile.save()
+      .then(() => {
+        res.redirect(`/profile/friends`)
+      })
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/')
+    })
+  })
+}
+
+
+function showFriends(req,res){
+  //access friends profile
+  Profile.findById(req.params.id)
+  .then(profile => {
+    res.render('profile/friends/show', {
+      title: `${profile.name}'s Details`,
+      profile,
+    })
+  })
+}
 
 
 export {
@@ -145,6 +229,11 @@ export {
   editJourney,
   deleteJourney,
   updateJourney,
+  friendsIndex,
+  newFriend,
+  updateFriendList,
+  showFriends,
+
   // edit,
   // show,
   // updateFriendId as update,

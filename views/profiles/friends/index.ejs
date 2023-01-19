@@ -1,0 +1,46 @@
+<%- include('../../partials/html-head') %>
+<%- include('../../partials/nav') %>
+
+<main class="main-friend-container">
+
+  <section class="flight-list">
+    <div class="flight-list-header">
+    <a href="/" class="back-btn">
+      <button>
+        <img src="../../../assets/back-btn.png" alt="">
+      </button>
+    </a>
+    <h1>friendsss</h1>
+    <a href="/profiles/<%= user?.profile._id %>friends/new">click here to add a new friend.</a>
+  </div>
+
+  
+
+  <% profile.friends.forEach(friend => { %>
+    <% if (profile.equals(user?.profile._id)) { %>
+        
+        <div class="friend-list">
+          <a class="friend-card-link" href="/profiles/<%= user?.profile._id %>/friends/<%= friend._id %>"> 
+            <div class="flight-card">
+              <div class="flight-card-content">
+            <%= friend.name%> 
+            <%= friend._id %>
+            <%= friend.flights.airline %>  
+            <% friend.flights.forEach(flight => { %>
+              <%= flight.airline %> 
+            <% }) %>
+            <!-- <%# friend.flights%>  -->
+          </a>
+          </div>
+        </div>
+
+
+          
+        </div>
+        <!-- <% } %> -->
+      <% }) %>
+
+  </section>
+</main>
+
+<%- include('../../partials/footer') %>

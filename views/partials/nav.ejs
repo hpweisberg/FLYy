@@ -6,12 +6,14 @@
   <nav>
     <!-- <img src="../../assets/back-btn.png" alt=""> -->
     <a href="/">
-      <div class="logo-pic" class="">FLYy</div>
+      <div class="logo-pic" class="">
+        <!-- <img src="../../public/assets/flly_logo.png" alt=""> -->
+        FLLy</div>
     </a>
       <nav class="primary-header">
-        <ul role="list" class="nav-list">
+        <ul class="nav-list">
           <li><a href="/flights">myFlights</a></li>
-          <li><a href="/friends">myFriends</a></li>
+          <li><a href="/profiles/<%= user?.profile._id %>/friends">myFriends</a></li>
           <li><a href="/profiles/<%= user?.profile._id %> ">myProfile</a></li>
         </ul>
     </nav>

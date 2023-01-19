@@ -3,8 +3,14 @@
   display: flex;
   flex-direction: row;
   gap: 5em;
-  
+  background-color: var(--clr-background-100);
 
+}
+
+.lading-page-btns {
+  border: none;
+  background: none;
+  font-size: var(--fs-900);
 }
 
 .flight-list, .journey-list {
@@ -24,12 +30,12 @@
   height: 9em;
   padding: 1em;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 1px solid var(--clr-primary-400);
   align-items: stretch;
   justify-content: space-around;
   margin: .5em 0;
   background-color: var(--clr-neutral-100);
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(5, 217, 255, 0.24) 0px 3px 8px;
 }
 
 .flight-card:hover, .journey-card:hover {
@@ -138,19 +144,17 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
-  margin-bottom: 15em;
+  justify-content: center;
+  box-shadow: rgba(5, 217, 255, 0.1) 0px 20px 25px -5px, rgba(5, 217, 255, 0.04) 0px 10px 10px -5px;
+  margin-bottom: 10em;
 }
 
 .select-flight-to-view-more {
   font-size: var(--fs-700);
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
-  color: black;
-
-
-  
+  padding: .6em;
 }
 
 .flight-detail-top {
@@ -233,16 +237,16 @@ h1 {
 .journey-card {
   display: flex;
   flex-direction: column;
-  width: 28em;
+  width: 28em;  
   height: 9em;
   padding: 1em;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 1px solid var(--clr-primary-400);
   align-items: stretch;
   justify-content: space-around;
   margin: .5em 0;
   background-color: var(--clr-neutral-100);
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(5, 217, 255, 0.24) 0px 3px 8px;
 }
 
 .jounrey-post {

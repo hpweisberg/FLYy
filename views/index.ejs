@@ -6,15 +6,15 @@
 <section class="main-container">
     <% if (user) { %>
     <a href="/flights">
-      <button>MyFlights</button>
+      <button class="lading-page-btns">MyFlights</button>
     </a>
       <div class="line"></div>
-      <a href="/friends">
-        <button>MyFriends</button>
+      <a href="/profiles/<%= user?.profile._id %>/friends">
+        <button class="lading-page-btns">MyFriends</button>
       </a>
       <div class="line"></div>
-        <a href="/profiles/<%= user.profile._id %> ">
-          <button>MyJourney</button>
+        <a href="profiles/<%= user?.profile._id %> ">
+          <button class="lading-page-btns">MyJourney</button>
           </a>
           <% } else { %>
             <h1>Please Log In or Create Account</h1>
