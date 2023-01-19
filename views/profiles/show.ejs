@@ -34,7 +34,7 @@
     <!-- <%# if (profile.journeys.owner.equals(user?.profile._id)) { %> -->
     <% profile.journeys?.forEach(journey => { %>
         <div class="journey-card">
-          <a href="/profiles/<%= profile._id %>/journeys/<%= journey._id %> ">
+          <a href="/profiles/<%= profile._id %>/journeys/<%= journey._id %>/edit">
             
             <div class=journey-card-left>
               <p><%= profile.name %> </p>

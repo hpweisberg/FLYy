@@ -6,6 +6,7 @@ const Schema = mongoose.Schema
 const journeySchema = new Schema({
   journeyDate: Date,
   journeyPost: String,
+  journeyCreator: { type: Schema.Types.ObjectId, ref: 'Profile'},
   hasLiked: [{ type: Schema.Types.ObjectId, ref: 'Profile'}]
 }, {
   timestamps: true

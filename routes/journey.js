@@ -22,8 +22,6 @@ router.post('/', isLoggedIn, journeyCtrl.create)
 // PUT /journey/:id
 router.put('/:id', isLoggedIn, journeyCtrl.update)
 
-// DELETE /journey/:id
-router.delete('/:id', isLoggedIn, journeyCtrl.delete)
 
 export {
   router

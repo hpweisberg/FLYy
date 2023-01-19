@@ -56,6 +56,7 @@ function showProfile(req, res){
 function createJourney(req, res){
   Profile.findById(req.user.profile._id)
   .then(profile => {
+    req.body.journeyCreator = req.user.profile._id
     profile.journeys.push(req.body)
     profile.save()
     .then(() => {
@@ -72,7 +73,44 @@ function createJourney(req, res){
     })
 }
 
+function editJourney(req, res){
+  Profile.findById(req.user.profile._id)
+  .then(profile => {
+    console.log(profile, 'THIS IS MY COMMENT')
+    const journeyDoc = profile.journeys?.id(req.params.journeyId)
+    if (journeyDoc.journeyCreator.equals(req.user.profile._id)) {
+      res.render('profiles/journeys/editJourney', {
+        profile,
+        journey: journeyDoc,
+        title: 'Edit Journey'
+      })
+    }
 
+  })
+}
+
+function deleteJourney(req, res){
+  Profile.findById(req.user.profile._id)
+  .then(profile => {
+    const journeyDoc = profile.journeys.id(req.params.journeyId)
+    if (journeyDoc.journeyCreator.equals(req.user.profile._id)) {
+      profile.journeys.remove(journeyDoc)
+      profile.save()
+      .then(() => {
+        res.redirect(`/profiles/${profile._id}`)
+      })
+      .catch(error => {
+        console.log(error)
+        res.redirect('/')
+      })
+    } else {
+      throw new Error('Can not delete')
+    }
+  })    .catch(error => {
+    console.log(error)
+    res.redirect('/')
+  })
+}
 
 
 
@@ -81,6 +119,8 @@ export {
   index,
   createJourney,
   showProfile,
+  editJourney,
+  deleteJourney,
   // edit,
   // show,
   // updateFriendId as update,
