@@ -200,7 +200,6 @@ h1 {
 }
 
 .flight-detail-top {
-  background-color: var(--clr-primary-400);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -259,7 +258,7 @@ h1 {
 
 
 .flight-detail-bottom {
-  background-color: orange;
+  /* background-color: orange; */
   display: flex;
   justify-content: space-around;
   /* align-items: flex-start; */
