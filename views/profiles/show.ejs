@@ -1,76 +1,71 @@
 <!-- <link rel="stylesheet" href="/stylesheets/landing.css"/> -->
 <%- include('../partials/html-head') %>
-  <%- include('../partials/nav') %>
+<%- include('../partials/nav') %>
 
 
-    <main class="main-journey-container">
+<main class="main-journey-container">
 
+  <section class="journey-list">
+    <div class="journey-header">
+      <button class="back-btn" onclick="window.history.back()">
+        <img class="back-btn" src="/assets/left-arrow-test.png" alt="back-btn">
+      </button>
+      <h1>myJourney</h1>
+      <a href="/auth/logout">
+        <button class="log-out-btn"><img class="log-out-btn" src="/assets/log-out.png" alt="log-out-btb"></button>
+      </a>
+    </div>
 
+    <!-- <%# if (profile.journeys.owner.equals(user?.profile._id)) { %> -->
 
-      <section class="journey-list">
-        <div class="journey-header">
-          <button class="back-btn" onclick="window.history.back()">
-            <img class="back-btn" src="/assets/left-arrow-test.png" alt="back-btn">
-          </button>
-          <h1>myJourney</h1>
-          <a href="/auth/logout">
-            <button class="log-out-btn"><img class="log-out-btn" src="/assets/log-out.png" alt="log-out-btb"></button>
-          </a>
-        </div>
+    <% profile.journeys?.forEach(journey=> { %>
+      <div class="journey-card">
+        <div class="flight-card-content">
+          <a class="no-underline" href="/profiles/<%= profile._id %>/journeys/<%= journey._id %>/edit">
+            <div class="journey-card-link">
 
-        <!-- <%# if (profile.journeys.owner.equals(user?.profile._id)) { %> -->
-          
-        <% profile.journeys?.forEach(journey=> { %>
-          <div class="journey-card">
-            <div class="flight-card-content">
-              <a class="no-underline" href="/profiles/<%= profile._id %>/journeys/<%= journey._id %>/edit">
-                <div class="journey-card-link">
+              <div class=journey-card-left>
+                <%= new Date(journey.journeyDate).toLocaleDateString(undefined, { month: "short" , day: "numeric" })
+                  %>
+              </div>
+              <div class="journey-card-right">
 
-                  <div class=journey-card-left>
-                      <%= new Date(journey.journeyDate).toLocaleDateString(undefined, { month: "short" , day: "numeric"
-                        }) %>
-                  </div>
-                  <div class="journey-card-right">
-
-                    <%= journey.journeyPost.slice(0, 50) %>
-                    <% if (journey.journeyPost.length > 50) { %>
-                      ...
+                <%= journey.journeyPost.slice(0, 50) %>
+                  <% if (journey.journeyPost.length> 50) { %>
+                    ...
                     <% } %>
 
-                  </div>
-                </div>
-              </a>
+              </div>
             </div>
-          </div>
-          <% }) %>
-            <!-- <%# } %> -->
-
-
-
-      </section>
-
-      <section class="flight-detail-container">
-        <div class="select-journey-to-view-more">
-          <form action="/profiles/<%= profile._id %>/journeys" id="new-journey" method="POST">
-            <div class="edit-journey-top">
-              <label for="journeyDate">Date:</label>
-              <input type="date" id="journeyDate" name="journeyDate" required>
-            </div>
-              <div class="edit-journey-bottom">
-              <label for="journeylPost">Journey Post:</label>
-              <textarea type="string" id="journeyPost" name="journeyPost" required>
-              </textarea>
-            </div>
-
-
-                <button type="submit" class="add-btn"><img class="add-btn" src="/assets/add-btn.png" alt="">Add myJourney</button>
-
-          </form>
+          </a>
         </div>
-      </section>
-    </main>>
+      </div>
+      <% }) %>
+
+  </section>
+
+  <section class="flight-detail-container">
+    <div class="select-journey-to-view-more">
+      <form action="/profiles/<%= profile._id %>/journeys" id="new-journey" method="POST">
+        <div class="edit-journey-top">
+          <label for="journeyDate">Date:</label>
+          <input type="date" id="journeyDate" name="journeyDate" required>
+        </div>
+        <div class="edit-journey-bottom">
+          <label for="journeylPost">Journey Post:</label>
+          <textarea type="string" id="journeyPost" name="journeyPost" required>
+          </textarea>
+        </div>
+
+        <button type="submit" class="add-btn"><img class="add-btn" src="/assets/add-btn.png" alt="">Add
+          myJourney</button>
+
+      </form>
+    </div>
+  </section>
+</main>>
 
 
 
 
-    <%- include('../partials/footer') %>
+<%- include('../partials/footer') %>

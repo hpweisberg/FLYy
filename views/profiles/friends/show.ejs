@@ -1,81 +1,81 @@
 <!-- <link rel="stylesheet" href="/stylesheets/landing.css"/> -->
 <%- include('../../partials/html-head') %>
-  <%- include('../../partials/nav') %>
+<%- include('../../partials/nav') %>
 
 
-    <main class="main-flight-container">
+<main class="main-flight-container">
 
-      <section class="flight-list">
-        <div class="friend-list-header">
-          <button class="back-btn" onclick="window.history.back()">
-            <img class="back-btn" src="/assets/left-arrow-test.png" alt="back-btn">
-          </button>
+  <section class="flight-list">
+    <div class="friend-list-header">
+      <button class="back-btn" onclick="window.history.back()">
+        <img class="back-btn" src="/assets/left-arrow-test.png" alt="back-btn">
+      </button>
 
-          <h1 class="friend-name-header">
-            <%= profile.name %>'s Flights
-          </h1>
+      <h1 class="friend-name-header">
+        <%= profile.name %>'s Flights
+      </h1>
 
 
+    </div>
+
+
+    <% profile.flights.forEach(flight=> { %>
+      <div class="friend-flight-card">
+        <div class="flight-card-content">
+
+          <div class=flight-card-left>
+            <span class="flight-card-date">
+              <%= new Date(flight.flightDate).toLocaleDateString(undefined, { month: "short" , day: "numeric" }) %>
+            </span>
+            <span class="flight-card-logo">
+              <%= flight.airline %>
+            </span>
+          </div>
+          <div class=flight-card-mid>
+            <div class="flight-card-terminal">
+              <%= flight.departureAirport %>
+            </div>
+
+            <div class="flight-card-text">Departs: </div>
+            <%= (flight.departureTime).toLocaleDateString(undefined, { hour: "numeric" , minute: "numeric"
+              }).slice(-7) %>
+          </div>
+
+          <div class=flight-card-right>
+            <div class="flight-card-terminal">
+              <%= flight.arrivalAirport %>
+            </div>
+            <div class="flight-card-text">Arrives: </div>
+            <%= (flight.arrivalTime).toLocaleDateString(undefined, { hour: "numeric" , minute: "numeric"
+              }).slice(-7) %>
+          </div>
         </div>
+      </div>
+      <% }) %>
 
+  </section>
 
-        <% profile.flights.forEach(flight=> { %>
-          <div class="friend-flight-card">
-            <div class="flight-card-content">
+  <section class="journey-card-section">
+    <div class="detail-card-right">
 
-              <div class=flight-card-left>
-                <span class="flight-card-date">
-                  <%= new Date(flight.flightDate).toLocaleDateString(undefined, { month: "short" , day: "numeric" }) %>
-                </span>
-                <span class="flight-card-logo">
-                  <%= flight.airline %>
-                </span>
-              </div>
-              <div class=flight-card-mid>
-                <div class="flight-card-terminal">
-                  <%= flight.departureAirport %>
-                </div>
-
-                <div class="flight-card-text">Departs: </div>
-                <%= (flight.departureTime).toLocaleDateString(undefined, { hour: "numeric" , minute: "numeric"
-                  }).slice(-7) %>
-              </div>
-
-              <div class=flight-card-right>
-                <div class="flight-card-terminal">
-                  <%= flight.arrivalAirport %>
-                </div>
-                <div class="flight-card-text">Arrives: </div>
-                <%= (flight.arrivalTime).toLocaleDateString(undefined, { hour: "numeric" , minute: "numeric"
-                  }).slice(-7) %>
-              </div>
+      <% profile.journeys.forEach(journey=> { %>
+        <section class="flight-detail-container">
+          <div>
+            <div class="friend-journey-date">
+              <%= new Date(journey.journeyDate).toLocaleDateString(undefined, { month: "short" , day: "numeric" })
+                %>
+            </div>
+            <div class="friend-journey-post">
+              <%= journey.journeyPost %>
             </div>
           </div>
-          <% }) %>
-
-      </section>
-
-      <section class="journey-card-section">
-        <div class="detail-card-right">
-
-          <% profile.journeys.forEach(journey=> { %>
-            <section class="flight-detail-container">
-              <div>
-                <div class="friend-journey-date">
-                  <%= new Date(journey.journeyDate).toLocaleDateString(undefined, { month: "short" , day: "numeric" })
-                    %>
-                </div>
-                <div class="friend-journey-post">
-                  <%= journey.journeyPost %>
-                </div>
-              </div>
-            </section>
-              <% }) %>
-            </div>
-    
-
         </section>
+        <% }) %>
+    </div>
 
 
+  </section>
 
-        <%- include('../../partials/footer') %>
+</main>
+
+  <%- include('../../partials/footer') %>

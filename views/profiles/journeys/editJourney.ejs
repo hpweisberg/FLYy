@@ -2,43 +2,42 @@
 <%- include('../../partials/nav') %>
 
 <main class="main-journey-container">
-  
-  
 
   <section class="journey-list">
-<div class="journey-header">
-  <button class="back-btn" onclick="window.history.back()">
-    <img class="back-btn" src="/assets/left-arrow-test.png" alt="back-btn">
-  </button>
-<h1 class="journey-header">Edit myJourney</h1>
-<a href="/auth/logout">
-  <button class="log-out-btn"><img class="log-out-btn" src="/assets/log-out.png" alt="log-out-btb"></button>
-</a>
-</div>
+    <div class="journey-header">
+      <button class="back-btn" onclick="window.history.back()">
+        <img class="back-btn" src="/assets/left-arrow-test.png" alt="back-btn">
+      </button>
+      <h1 class="journey-header">Edit myJourney</h1>
+      <a href="/auth/logout">
+        <button class="log-out-btn"><img class="log-out-btn" src="/assets/log-out.png" alt="log-out-btb"></button>
+      </a>
+    </div>
 
-  <!-- <%# if (profile.journeys.owner.equals(user?.profile._id)) { %> -->
-    
-    <% profile.journeys.sort((a, b) => new Date(b.journeyDate) - new Date(a.journeyDate)).forEach(journey=> { %>
+    <!-- <%# if (profile.journeys.owner.equals(user?.profile._id)) { %> -->
+
+    <% profile.journeys.sort((a, b)=> new Date(b.journeyDate) - new Date(a.journeyDate)).forEach(journey=> { %>
       <div class="journey-card">
         <div class="flight-card-content">
-        <a class="no-underline" href="/profiles/<%= profile._id %>/journeys/<%= journey._id %>/edit">
-          <div class="journey-card-link">
+          <a class="no-underline" href="/profiles/<%= profile._id %>/journeys/<%= journey._id %>/edit">
+            <div class="journey-card-link">
 
-            <div class=journey-card-left>
-              <span class="journey-card-date"> <%= new Date(journey.journeyDate).toLocaleDateString(undefined, {
-                month: "short", day: "numeric"
-              }) %> </span>
+              <div class=journey-card-left>
+                <span class="journey-card-date">
+                  <%= new Date(journey.journeyDate).toLocaleDateString(undefined, { month: "short" , day: "numeric"
+                    }) %>
+                </span>
+              </div>
+              <div class="journey-card-right">
+
+                <%= journey.journeyPost.slice(0, 50) %>
+                  <% if (journey.journeyPost.length> 50) { %>
+                    ...
+                    <% } %>
+
+              </div>
             </div>
-            <div class="journey-card-right">
-              
-              <%= journey.journeyPost.slice(0, 50) %>
-              <% if (journey.journeyPost.length > 50) { %>
-                ...
-              <% } %>
-              
-            </div>
-          </div>
-        </a>
+          </a>
         </div>
       </div>
       <% }) %>
@@ -46,34 +45,38 @@
 
   <section class="flight-detail-container">
     <div class="select-flight-to-view-more">
-      <form action="/profiles/<%= profile._id %>/journeys/<%= journey._id %>?_method=PUT" id="edit-journey" method="POST">
+      <form action="/profiles/<%= profile._id %>/journeys/<%= journey._id %>?_method=PUT" id="edit-journey"
+        method="POST">
         <div class="edit-journey-top">
 
           <label for="journeyDate">Date: <%= new Date(journey.journeyDate).toLocaleDateString(undefined, {
-            month: "short", day: "numeric"
-          }) %> %></label>
-      
-        <input type="date" value="<%=(journey.journeyDate).toLocaleDateString('en-CA') %>"  id="journeyDate" name="journeyDate" required>
+              month: "short" , day: "numeric" }) %> %></label>
 
-      </div>
+          <input type="date" value="<%=(journey.journeyDate).toLocaleDateString('en-CA') %>" id="journeyDate"
+            name="journeyDate" required>
 
-      <div class="edit-journey-bottom">
-        <label for="journeylPost">Journey Post:</label>
-        <textarea id="journeyPost" type="string" value="<%= journey.journeyPost %>" id="new-journey" name="journeyPost">
-          </textarea>
-        
         </div>
-        <button type="submit" class="add-btn"><img class="add-btn" src="/assets/add-btn.png" alt="">Update myJourney</button>
+
+        <div class="edit-journey-bottom">
+          <label for="journeylPost">Journey Post:</label>
+          <textarea id="journeyPost" type="string" value="<%= journey.journeyPost %>" id="new-journey"
+            name="journeyPost">
+      </textarea>
+
+        </div>
+        <button type="submit" class="add-btn"><img class="add-btn" src="/assets/add-btn.png" alt="">Update
+          myJourney</button>
 
       </form>
 
       <% if (journey.journeyCreator._id.equals(user?.profile._id)) { %>
-        <form id="delete-journey" action="/profiles/<%= profile._id %>/journeys/<%= journey._id %>?_method=DELETE" method="POST">
+        <form id="delete-journey" action="/profiles/<%= profile._id %>/journeys/<%= journey._id %>?_method=DELETE"
+          method="POST">
           <button class="delete-btn">
             <img class="delete-btn" src="/assets/trash.png" alt="delete-btn">
           </button>
         </form>
-      <% } %> 
+        <% } %>
 
 
 </main>

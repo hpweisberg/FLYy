@@ -1,31 +1,31 @@
-<link rel="stylesheet" href="/stylesheets/landing.css"/>
+<link rel="stylesheet" href="/stylesheets/landing.css" />
 <%- include('./partials/html-head') %>
 <%- include('./partials/nav') %>
 
 
 <section class="main-container">
-    <% if (user) { %>
+  <% if (user) { %>
     <a class="landing-btn" href="/flights">
       <div class="flights-bg-img">
         <button class="lading-page-btns">myFlights</button>
       </div>
     </a>
-      <div class="line"></div>
-      <a class="landing-btn" href="/profiles/<%= user?.profile._id %>/friends">
-        <div class="friends-bg-img">
-          <button class="lading-page-btns">myFriends</button>
-        </div>
-      </a>
-      <div class="line"></div>
-        <a class="landing-btn" href="profiles/<%= user?.profile._id %> ">
-          <div class="journey-bg-img">
-            <button class="lading-page-btns">myJourney</button>
-          </div>
-          </a>
-          <% } else { %>
-            <h1>Please Log In or Create Account</h1>
-            <% } %>
-        </section>
+    <div class="line"></div>
+    <a class="landing-btn" href="/profiles/<%= user?.profile._id %>/friends">
+      <div class="friends-bg-img">
+        <button class="lading-page-btns">myFriends</button>
+      </div>
+    </a>
+    <div class="line"></div>
+    <a class="landing-btn" href="profiles/<%= user?.profile._id %> ">
+      <div class="journey-bg-img">
+        <button class="lading-page-btns">myJourney</button>
+      </div>
+    </a>
+    <% } else { %>
+      <h1>Please Log In or Create Account</h1>
+      <% } %>
+</section>
 
 </main>
 
