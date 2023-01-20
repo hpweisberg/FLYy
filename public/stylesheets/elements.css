@@ -544,8 +544,9 @@ h1 {
 }
 
 #journeyPost {
-  width: 80%;
-  height: 50%;
+  width: 90%;
+  height: 70%;
+  max-width: 100%;
 }
 
 .journey-header > h1 {
@@ -664,3 +665,4 @@ label {
   align-items: center;
   padding-top: 1.6em;
 }
+
