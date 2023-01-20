@@ -18,6 +18,16 @@ Check out your friend's journey posts to see what crazy adventures they've gotte
 
 # Fly safe, fly with FLYy!
 
+## Technologies Used 💾
+
+- MongoDB
+- Mongoose
+- NodeJS
+- ExpressJS
+- HTML
+- CSS
+- JavaScript
+
 ## Planning Material 📕
 Check out my
 [Trello Board](https://flyy-harrisonw.fly.dev/) 
