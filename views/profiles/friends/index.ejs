@@ -14,9 +14,6 @@
     </a>
 
   </div>
-  <h1 class="friend-code">My Friend Code: <br>
-    <%= profile.friendId %></h1>
-
   
     <% profile.friends.sort((a, b) => a.name.localeCompare(b.name)); %>
   <% profile.friends.forEach(friend => { %>
@@ -48,8 +45,8 @@
   </section>
 
   <section class="flight-detail-container">
-    <div class="select-flight-to-view-more">
-      Please select a friend to view upcoming flight details and Journey posts.
+    <div class="select-flight-to-view-more">My Friend Code:
+        <%= profile.friendId %></h1>
     </div>
   </section>
   
