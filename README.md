@@ -4,7 +4,7 @@ Do you love to travel? Do the kids fly back and forth to college? Or perhaps you
 
 ![Family Group Chat Text](/public/assets/flight-text-chain.jpeg)
 
-# [Introducing, FLYy! ✈️](https://flyy-harrisonw.fly.dev/)
+# [Introducing FLYy! ✈️](https://flyy-harrisonw.fly.dev/)
 
 The flight tracker for you and your friends!
 

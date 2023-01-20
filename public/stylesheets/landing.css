@@ -11,19 +11,6 @@
   margin-right: auto 
 }
 
-@media (max-width: 480) {
-  .main-container {
-    flex-direction: column;
-  }
-
-  h1 {
-    color: red;
-  }
-}
-
-
-
-
 .line {
   width: 5px;
   height: 80%;

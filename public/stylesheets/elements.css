@@ -83,7 +83,6 @@ input::placeholder {
 
 
 .flight-card-left {
-  /* background-color: red; */
   display: flex;
   flex-direction: column;
   width: 10em;
@@ -93,7 +92,6 @@ input::placeholder {
 }
 
 .flight-card-mid {
-  /* background-color: blue; */
   display: flex;
   flex-direction: column;
   width: 10em;
@@ -102,7 +100,6 @@ input::placeholder {
 }
 
 .flight-card-right {
-  /* background-color: green; */
   display: flex;
   flex-direction: column;
   width: 10em;
@@ -116,11 +113,6 @@ input::placeholder {
 }
 
 .flight-card-logo {
-  /* display: flex; */
-  /* flex-direction: row; */
-  /* justify-content: flex-end;
-  align-items: flex-end; */
-  /* background-color: red; */
   text-align: end;
 }
 
@@ -153,10 +145,8 @@ h1 {
 
 .flight-list-header {
   display: flex;
-  /* border: .3em solid blue; */
   width: 28em;
   align-items: center;
-  /* align-content: space-around; */
   justify-content: space-around;
 }
 
@@ -179,7 +169,6 @@ h1 {
 
 .select-flight-to-view-more {
   font-size: var(--fs-700);
-  /* display: flex; */
   justify-content: center;
   align-items: center;
   padding: 1.5em;
@@ -203,21 +192,15 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* text-align: right; */
 }
 
 .flight-detail-airline {
-  /* color: red; */
   display: flex;
-  /* justify-content: center;
-  align-items: center; */
   width: 20%;
 }
 
 .flight-detail-mid {
-  /* background-color: green; */
   display: flex;
-  /* font-size: var(--fs-800); */
   gap: 1.5em;
   flex-direction: row;
   padding-bottom: 1em;
@@ -258,10 +241,8 @@ h1 {
 
 
 .flight-detail-bottom {
-  /* background-color: orange; */
   display: flex;
   justify-content: space-around;
-  /* align-items: flex-start; */
   gap: 25px;
   text-align: center;
 }
@@ -269,16 +250,10 @@ h1 {
 .flight-detail-bottom-elements {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
   align-items: center;
   justify-content: center;
   width: 5em;
 }
-
-/* .flight-no-txt { */
-  /* width: 70%; */
-  /* font-size: var(--fs-300); */
-/* } */
 
 .flight-detail-bottom-bold {
   font-weight: bold;
@@ -304,11 +279,6 @@ h1 {
 .back {
   font-size: var(--fs-300);
   text-decoration: none;
-  /* background: url(../../assets/back-btn.png); */
-  /* display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
-  left: auto; */
 }
 
 .log-out-btn {
@@ -341,7 +311,6 @@ h1 {
   height: 2em;
   border: none;
   background: none;
-  /* border-radius: 35%; */
 }
 
 .back-btn > img:hover {
@@ -360,7 +329,6 @@ h1 {
   height: 2em;
   border: none;
   background: none;
-  /* border-radius: 35%; */
 }
 .delete-btn:hover {
   content: url("/assets/trash-hover.png");
@@ -442,10 +410,8 @@ h1 {
 
 .friend-list-header, .journey-header {
   display: flex;
-  /* border: .3em solid blue; */
   width: 28em;
   align-items: center;
-  /* align-content: space-around; */
   justify-content: space-around;
   text-align: center;
 }
@@ -482,16 +448,12 @@ h1 {
   display: flex;
   flex-direction: row;
   font-size: var(--fs-700);
-  /* background-color: red; */
 }
 
 .friend-card-content-name {
   text-decoration: none;
   border-right: 4px solid black;
 }
-
-
-
 
 
 /* ! Journey */
@@ -532,11 +494,9 @@ h1 {
   align-items: flex-end;
   padding-right: 1em;
   border-right: 4px black solid;
-    /* background-color: blue; */
 }
 
 .journey-card-right {
-  /* background-color: red; */
   width: 12em;
 }
 
@@ -567,7 +527,6 @@ h1 {
 #journeyPost {
   width: 80%;
   height: 50%;
-  /* background-color: blue; */
 }
 
 .journey-header > h1 {
@@ -602,7 +561,6 @@ border-radius: 1px;
 
 .select-journey-to-view-more {
   font-size: var(--fs-900);
-  /* display: flex; */
   justify-content: center;
   align-items: center;
   padding: 1em;
@@ -637,9 +595,7 @@ label {
 
 
 .logo-pic {
-  /* background-image: url("../images/flly_logo.png"); */
   height: 70px;
-  /* width: 1000px; */
   object-fit: cover;
   display: flex;
   flex-direction: column;

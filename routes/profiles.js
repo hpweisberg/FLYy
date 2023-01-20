@@ -18,7 +18,7 @@ router.get('/', isLoggedIn, profileCtrl.index)
 // POST /profile/:id/journeys
 router.post('/:id/journeys', isLoggedIn, profileCtrl.createJourney)
 
-// GET
+// GET profile/:profileId/journeys/:journeyId/edit
 router.get('/:profileId/journeys/:journeyId/edit', isLoggedIn, profileCtrl.editJourney)
 
 // GET /profiles/profileId/friends
@@ -27,17 +27,14 @@ router.get('/:profileId/friends', isLoggedIn, profileCtrl.friendsIndex)
 // GET /profiles/profileId/friends/new
 router.get('/:profileId/friends/new', isLoggedIn, profileCtrl.newFriend)
 
-// GET /profile/profileId/friends/friendId
+// GET /profile/:profileId/friends/:friendId
 router.get('/:profileId/friends/:friendId', isLoggedIn, profileCtrl.showFriends)
 
+// PUT /profile/profileId/journeys/:journeyId
 router.put('/:profileId/journeys/:journeyId', isLoggedIn, profileCtrl.updateJourney)
 
-
+// DELETE /profile/profileId/journeys/:journeyId
 router.delete('/:profileId/journeys/:journeyId', isLoggedIn, profileCtrl.deleteJourney)
-
-// PUT /profile/:id
-// router.put('/:id', profileCtrl.update)
-
 
 
 export {
