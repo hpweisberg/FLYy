@@ -14,11 +14,11 @@
     </a>
 
   </div>
-  <h1 class="friend-code">Friend Code: <br>
+  <h1 class="friend-code">My Friend Code: <br>
     <%= profile.friendId %></h1>
 
   
-
+    <% profile.friends.sort((a, b) => a.name.localeCompare(b.name)); %>
   <% profile.friends.forEach(friend => { %>
     <% if (profile.equals(user?.profile._id)) { %>
         
@@ -26,12 +26,12 @@
           <a class="friend-card-link" href="/profiles/<%= user?.profile._id %>/friends/<%= friend._id %>"> 
             <div class="flight-card">
               <div class="friend-card-content">
-                <p>
+                <p class="friend-card-content-name">
                   <%= friend.name%> 
 
                 </p>
-            <p>
-              <%= profile.flights.length %> upcoming flights 
+            <p class="friend-card-content-amount">
+              Upcoming Flights: <%= profile.flights.length %> 
             </p>
 
             <!-- <%# friend.flights%>  -->
@@ -42,7 +42,7 @@
 
           
         </div>
-        <!-- <% } %> -->
+        <% } %>
       <% }) %>
 
   </section>

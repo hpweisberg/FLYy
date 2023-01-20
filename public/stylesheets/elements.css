@@ -432,19 +432,34 @@ h1 {
 
 .friend-code{
   text-align: center;
-  border: 2px solid black;
+  font-size: var(--fs-800);
+  width: 100%;
+  border: 2px solid var(--clr-accent-400);
   background-color: var(--clr-background-100);
 }
 
 .friend-list {
   color: black;
 }
+.friend-card-link {
+  text-decoration: none;
+  display: flex;
+  gap: 1em;
+  color: var(--clr-neutral-900);
+}
 
 .friend-card-content {
   display: flex;
   flex-direction: row;
-  font-size: var(--fs-800);
+  font-size: var(--fs-700);
+  /* background-color: red; */
 }
+
+.friend-card-content-name {
+  text-decoration: none;
+  border-right: 4px solid black;
+}
+
 
 
 
