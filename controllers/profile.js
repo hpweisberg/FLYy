@@ -7,7 +7,6 @@ function index(req, res){
     console.log(profile, "index")
     res.render('profiles/userProfile', {
       profile,
-      // flights,
       title: "Profile"
     })
   })
@@ -16,32 +15,6 @@ function index(req, res){
     res.redirect('/profiles')
   })
 }
-
-
-// function edit(req, res){
-//   // req.body.owner = req.user.profile._id
-//   Profile.findById(req.params.id)
-//   .then(profile => {
-//     res.render('profile', {
-//       profile
-//     })
-//   })
-//   .catch(err => {
-//     console.log(err)
-//     res.redirect('/')
-//   })
-// }
-
-// function updateFriendId(req, res){
-//   Profile.findByIdAndUpdate(req.params.id, req.body, {new:true})
-//   .then(profile => {
-//     res.redirect(`/profile/${profile._id}`)
-//   })
-//   .catch(error => {
-//     console.log(error)
-//     res.redirect('/')
-//   })
-// }
 
 function showProfile(req, res){
   Profile.findById(req.params.id)
@@ -78,7 +51,6 @@ function createJourney(req, res){
 function editJourney(req, res){
   Profile.findById(req.user.profile._id)
   .then(profile => {
-    console.log(profile, 'THIS IS MY COMMENT')
     const journeyDoc = profile.journeys?.id(req.params.journeyId)
     if (journeyDoc.journeyCreator.equals(req.user.profile._id)) {
       res.render('profiles/journeys/editJourney', {
@@ -129,7 +101,7 @@ function updateJourney(req, res){
         res.redirect('/profiles')
       })
     } else {
-      throw new Error('🚫 Not authorized 🚫')
+      throw new Error('Not authorized')
     }
   })
   .catch(err => {
@@ -143,12 +115,9 @@ function friendsIndex(req, res){
   .populate('friends')
   .populate('flights')
   .then(profile => {
-    
-    // const friendsDoc = profile.friends?.id(req.body.friendId)
     res.render('profiles/friends/index', {
       profile,
       title: "Friends",
-      // friend: friendsDoc
     })
   })
   .catch(err => {
@@ -156,25 +125,6 @@ function friendsIndex(req, res){
     res.redirect('/')
   })
 }
-// if (journeyDoc.journeyCreator.equals(req.user.profile._id)) 
-// function editJourney(req, res){
-//   Profile.findById(req.user.profile._id)
-//   .then(profile => {
-//     console.log(profile, 'THIS IS MY COMMENT')
-//     const journeyDoc = profile.journeys?.id(req.params.journeyId)
-//     if (journeyDoc.journeyCreator.equals(req.user.profile._id)) {
-//       res.render('profiles/journeys/editJourney', {
-//         profile,
-//         journey: journeyDoc,
-//         title: 'Edit Journey'
-//       })
-//     }
-
-//   })
-// }
-
-
-
 
 
 function newFriend(req, res){
@@ -212,7 +162,6 @@ function updateFriendList(req, res){
 
 
 function showFriends(req, res){
-  //access friends profile
   Profile.findById(req.params.friendId)
   .populate('flights')
   .then(profile => {
@@ -237,9 +186,5 @@ export {
   newFriend,
   updateFriendList,
   showFriends,
-
-  // edit,
-  // show,
-  // updateFriendId as update,
 }
 

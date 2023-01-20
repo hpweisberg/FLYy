@@ -9,15 +9,8 @@ function isLoggedIn(req, res, next) {
   res.redirect('/')
 }
 
-// function makeFriendCode(req, res, next){
-//   if (req.profile.friendId === null){
-//     console.log(uuid())
-//   }
-// }
-
 
 export {
   passDataToView,
   isLoggedIn,
-  // makeFriendCode
 }

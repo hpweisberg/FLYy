@@ -218,6 +218,7 @@ h1 {
 .flight-detail-airline {
   display: flex;
   width: 20%;
+  text-align: right;
 }
 
 .flight-detail-mid {
@@ -284,6 +285,7 @@ h1 {
   font-size: 5em;
   width: 75%;
   padding: .3em 0 .2em 0;
+  z-index: 2;
 }
 
 
