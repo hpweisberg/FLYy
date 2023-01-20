@@ -166,6 +166,7 @@ h1 {
   justify-content: center;
   box-shadow: rgba(5, 217, 255, 0.1) 0px 20px 25px -5px, rgba(5, 217, 255, 0.04) 0px 10px 10px -5px;
   margin-bottom: 10em;
+  padding: 1em;
 }
 
 .select-flight-to-view-more {
@@ -176,25 +177,50 @@ h1 {
   padding: 1.5em;
 }
 
+.flight-detail-bottom, .flight-detail-mid, .flight-detail-top {
+  width: 100%;
+  padding: .4em;
+
+}
+
 .flight-detail-top {
   background-color: blue;
   display: flex;
-  justify-content: flex-end;
-  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  /* text-align: right; */
 }
 
 .flight-detail-airline {
   color: red;
   display: flex;
+  /* justify-content: center;
+  align-items: center; */
+  width: 20%;
 }
 
 .flight-detail-mid {
   /* background-color: green; */
   display: flex;
   /* font-size: var(--fs-800); */
-  gap: 3em;
+  gap: 1.5em;
   flex-direction: row;
   padding-bottom: 1em;
+  justify-content: center;
+}
+
+.arrow-div {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow-div > img {
+  content: url("/assets/Arrow_right.png");
+  height: 50%;
+  margin: 0;
 }
 
 .flight-detail-airport-code {
@@ -208,17 +234,19 @@ h1 {
 .flight-detail-mid-departure{
   display: flex;
   flex-direction: column;
+  margin: 0;
 }
 
 
 
-/* .flight-detail-mid-arrival{
-  
-} */
+.flight-detail-mid-arrival{
+  margin: 0;
+}
 
 .flight-detail-bottom {
   background-color: orange;
   display: flex;
+  justify-content: space-between;
   gap: 25px;
   text-align: center;
 }
@@ -226,6 +254,11 @@ h1 {
 .flight-detail-bottom-elements {
   display: flex;
   flex-direction: column;
+}
+
+.flight-no-txt {
+  width: 70%;
+  font-size: var(--fs-300);
 }
 
 .flight-detail-bottom-bold {
@@ -259,16 +292,30 @@ h1 {
   left: auto; */
 }
 
-.back-btn {
+
+
+.edit-btn {
+  width: 2em;
+  height: 2em;
+  border: none;
+  background: none;
+}
+
+.edit-btn > img:hover {
+  content: url("/assets/edit-hover.png");
+}
+
+
+  .back-btn {
   width: 2em;
   height: 2em;
   border: none;
   background: none;
   border-radius: 35%;
 }
+
 .back-btn > img:hover {
   content: url("/assets/left-arrow-hover.png");
-
 }
 
 .edit-btn-detials {

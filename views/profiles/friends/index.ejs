@@ -6,13 +6,12 @@
   <section class="flight-list">
     <div class="flight-list-header">
       <button class="back-btn" onclick="window.history.back()">
-        <img class="back-btn" src="../../../assets/back-btn.png" alt="">
+        <img class="back-btn" src="/assets/left-arrow-test.png" alt="back-btn">
       </button>
     <h1>myFriends</h1>
-    <a href="/profiles/<%= user?.profile._id %>/friends/new">click here to add a new friend.</a>
-          <button class="add-btn" onclick="window.history.back()">
-        <img class="add-btn" src="../../../assets/add-btn.png" alt="">
-      </button>
+    <a href="/profiles/<%= user?.profile._id %>/friends/new">
+      <button class="add-btn"><img class="add-btn" src="/assets/add-btn.png" alt=""></button>
+    </a>
 
   </div>
   <h1 class="friend-code">Friend Code: <br>
