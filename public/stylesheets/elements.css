@@ -266,6 +266,10 @@ h1 {
   background: none;
   border-radius: 35%;
 }
+.back-btn > img:hover {
+  content: url("/assets/left-arrow-hover.png");
+
+}
 
 .edit-btn-detials {
   display: flex;
@@ -275,8 +279,15 @@ h1 {
 }
 
 .add-btn {
-  height: 3em;
-  width: 3em;
+  width: 2em;
+  height: 2em;
+  border: none;
+  background: none;
+  border-radius: 35%;
+}
+.add-btn:hover {
+    content: url("/assets/add-btn-hover.png");
+  
 }
 
 .landing-btn {
