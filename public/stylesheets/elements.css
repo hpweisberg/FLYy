@@ -14,6 +14,14 @@
   height: 100vh;
 }
 
+input, select, textarea {
+  border-radius: 8px;
+}
+
+input::placeholder {
+  padding-left: .3em;
+}
+
 .lading-page-btns {
   border: none;
   background: none;
@@ -74,7 +82,7 @@
 
 
 
-.flight-card-left, .journey-card-left {
+.flight-card-left {
   /* background-color: red; */
   display: flex;
   flex-direction: column;
@@ -304,7 +312,17 @@ h1 {
   left: auto; */
 }
 
+.log-out-btn {
+  width: 2em;
+  height: 2em;
+  border: none;
+  background: none;
+}
 
+.log-out-btn:hover {
+  content: url("/assets/log-out-hover.png");
+  cursor: pointer;
+}
 
 .edit-btn {
   width: 2em;
@@ -315,6 +333,7 @@ h1 {
 
 .edit-btn > img:hover {
   content: url("/assets/edit-hover.png");
+  cursor: pointer;
 }
 
 
@@ -328,6 +347,7 @@ h1 {
 
 .back-btn > img:hover {
   content: url("/assets/left-arrow-hover.png");
+  cursor: pointer;
 }
 
 .edit-btn-detials {
@@ -345,7 +365,7 @@ h1 {
 }
 .delete-btn:hover {
   content: url("/assets/trash-hover.png");
-
+  cursor: pointer;
 }
 
 .add-btn {
@@ -357,7 +377,7 @@ h1 {
 }
 .add-btn:hover {
     content: url("/assets/add-btn-hover.png");
-  
+    cursor: pointer;
 }
 
 .landing-btn {
@@ -421,13 +441,14 @@ h1 {
   text-align: center;
 }
 
-.friend-list-header {
+.friend-list-header, .journey-header {
   display: flex;
   /* border: .3em solid blue; */
   width: 28em;
   align-items: center;
   /* align-content: space-around; */
   justify-content: space-around;
+  text-align: center;
 }
 
 .friend-code{
@@ -479,7 +500,7 @@ h1 {
   margin: .5em 0;
   background-color: var(--clr-neutral-100);
   box-shadow: rgba(5, 217, 255, 0.24) 0px 3px 8px;
-  text-decoration: none;
+  
 }
 
 .journey-card-link {
@@ -487,31 +508,36 @@ h1 {
   flex-direction: row;
   height: 8em;
   width: 100%;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   color: var(--clr-neutral-900);
-}
-
-
+  text-decoration: none;
+  gap: 1em;
+} 
 
 
 .journey-card-left {
   display: flex;
-  font-size: var(--fs-300);
-  /* background-color: blue; */
+  font-size: var(--fs-800);
+  width: 4.4em;
+  align-items: flex-end;
+  padding-right: 1em;
+  border-right: 4px black solid;
+    /* background-color: blue; */
 }
 
 .journey-card-right {
   /* background-color: red; */
-  width: 5em;
+  width: 12em;
 }
 
-.journey-card-date {
-  font-size: var(--fs-800);
+.no-underline {
+  text-decoration: none;
 }
 
 .jounrey-post {
-  color: black
+  color: black;
+  text-decoration: none;
 }
 
 .friend-journey-date {
@@ -532,6 +558,52 @@ h1 {
 #journeyPost {
   width: 80%;
   height: 50%;
+  /* background-color: blue; */
+}
+
+.journey-header > h1 {
+  width: 50%;
+}
+
+.journey-header > a {
+  margin-left: .8em;
+}
+
+#journeyDate {
+border-radius: 1px;
+}
+
+
+
+.edit-journey-top {
+  font-size: var(--fs-900);
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
+  align-items: flex-start;
+}
+
+  .edit-journey-bottom {
+  font-size: var(--fs-900);
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
+  align-items: flex-start;
+  }
+
+.select-journey-to-view-more {
+  font-size: var(--fs-900);
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+}
+
+#delete-journey {
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+  bottom: 1em;
 }
 
 /* ! New Flight */

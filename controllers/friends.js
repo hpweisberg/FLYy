@@ -49,7 +49,7 @@ function updateFriendList(req, res){
       console.log('Chow is hungry', friendProfile._id)
       userProfile.save()
       .then(() => {
-        res.redirect(`/friends`)
+        res.redirect(`profile/friends`)
       })
     })
     .catch(err => {
