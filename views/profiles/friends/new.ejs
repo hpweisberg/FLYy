@@ -2,18 +2,22 @@
 <%- include('../../partials/nav') %>
 
 <main>
-  <h1>Add a new friend</h1>
-
+  
   <div>
-
+    
   </div>
-
-
-  <form action="/friends/updateFriendList?_method=PATCH" id="new-friend" method="POST">
-    <label for="friends">Friend ID Code:</label>
-    <input type="string" placeholder="1234-5678-9012" id="new-friend" name="friends">
-    <button class="add-btn"><img class="add-btn" src="/assets/add-btn.png" alt=""></button>
-</form>
+  
+  <div class="new-friend-card">
+    <button class="back-btn" onclick="window.history.back()">
+      <img class="back-btn" src="/assets/left-arrow-test.png" alt="back-btn">
+    </button>
+    <h1>Add new friend</h1>
+    <form action="/friends/updateFriendList?_method=PATCH" id="new-friend" method="POST">
+      <label for="friends">Friend ID Code:</label>
+      <input type="string" placeholder="1sf4-e678-9fb2" id="new-friend" name="friends">
+      <button class="add-btn"><img class="add-btn" src="/assets/add-btn.png" alt=""></button>
+    </form>
+  </div>
 
 </main>
 
