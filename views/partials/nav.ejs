@@ -1,28 +1,29 @@
-  <link rel="stylesheet" href="/stylesheets/elements.css">
-  
-  <% if (!user) { %>
-    <script defer src="https://accounts.google.com/gsi/client"></script>
-  <% } %>
-</head>
-<body >
-  <nav>
-    <!-- <img src="../../assets/back-btn.png" alt=""> -->
-    <a href="/">
-      <div class="logo-pic">
-        <img src="/images/flly_logo.png" alt="FLYy Logo">
-        </div>
-    </a>
-      <nav class="primary-header">
-        <ul class="nav-list">
-          <li><a href="/flights">myFlights</a></li>
-          <li><a href="/profiles/<%= user?.profile._id %>/friends">myFriends</a></li>
-          <li><a href="/profiles/<%= user?.profile._id %> ">myJourney</a></li>
-        </ul>
-    </nav>
-    <% if (user) { %>
-      <a href="/profiles/<%= user.profile._id %>" class="profile-first-name">
+<link rel="stylesheet" href="/stylesheets/elements.css">
 
-        <h1 class="profile-first-name"><%= user ? user.profile.name.split(' ').slice(0, -1) : "";
+<% if (!user) { %>
+  <script defer src="https://accounts.google.com/gsi/client"></script>
+  <% } %>
+    </head>
+
+    <body>
+      <nav>
+        <a href="/">
+          <div class="logo-pic">
+            <img src="/images/flly_logo.png" alt="FLYy Logo">
+          </div>
+        </a>
+        <nav class="primary-header">
+          <ul class="nav-list">
+            <li><a href="/flights">myFlights</a></li>
+            <li><a href="/profiles/<%= user?.profile._id %>/friends">myFriends</a></li>
+            <li><a href="/profiles/<%= user?.profile._id %> ">myJourney</a></li>
+          </ul>
+        </nav>
+        <% if (user) { %>
+          <a href="/profiles/<%= user.profile._id %>" class="profile-first-name">
+
+            <h1 class="profile-first-name">
+              <%= user ? user.profile.name.split(' ').slice(0, -1) : "";
         %></h1>
       </a>
       <% if (user?.profile.avatar) { %>

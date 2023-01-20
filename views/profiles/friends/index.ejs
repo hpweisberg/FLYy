@@ -8,48 +8,45 @@
       <button class="back-btn" onclick="window.history.back()">
         <img class="back-btn" src="/assets/left-arrow-test.png" alt="back-btn">
       </button>
-    <h1>myFriends</h1>
-    <a href="/profiles/<%= user?.profile._id %>/friends/new">
-      <button class="add-btn"><img class="add-btn" src="/assets/add-btn.png" alt=""></button>
-    </a>
+      <h1>myFriends</h1>
+      <a href="/profiles/<%= user?.profile._id %>/friends/new">
+        <button class="add-btn"><img class="add-btn" src="/assets/add-btn.png" alt=""></button>
+      </a>
 
-  </div>
-  
-    <% profile.friends.sort((a, b) => a.name.localeCompare(b.name)); %>
-  <% profile.friends.forEach(friend => { %>
-    <% if (profile.equals(user?.profile._id)) { %>
-        
-        <div class="friend-list">
-          <a class="friend-card-link" href="/profiles/<%= user?.profile._id %>/friends/<%= friend._id %>"> 
-            <div class="flight-card">
-              <div class="friend-card-content">
-                <p class="friend-card-content-name">
-                  <%= friend.name%> 
+    </div>
 
-                </p>
-            <p class="friend-card-content-amount">
-              Upcoming Flights: <%= profile.flights.length %> 
-            </p>
+    <% profile.friends.sort((a, b)=> a.name.localeCompare(b.name)); %>
+      <% profile.friends.forEach(friend=> { %>
+        <% if (profile.equals(user?.profile._id)) { %>
 
-            <!-- <%# friend.flights%>  -->
-          </a>
+          <div class="friend-list">
+            <a class="friend-card-link" href="/profiles/<%= user?.profile._id %>/friends/<%= friend._id %>">
+              <div class="flight-card">
+                <div class="friend-card-content">
+                  <p class="friend-card-content-name">
+                    <%= friend.name%>
+
+                  </p>
+                  <p class="friend-card-content-amount">
+                    Upcoming Flights: <%= profile.flights.length %>
+                  </p>
+            </a>
           </div>
-        </div>
+          </div>
 
-
-          
-        </div>
-        <% } %>
-      <% }) %>
+          </div>
+          <% } %>
+            <% }) %>
 
   </section>
 
   <section class="flight-detail-container">
     <div class="select-flight-to-view-more">My Friend Code:
-        <%= profile.friendId %></h1>
+      <%= profile.friendId %>
+        </h1>
     </div>
   </section>
-  
+
 </main>
 
 <%- include('../../partials/footer') %>
