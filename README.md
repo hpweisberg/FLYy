@@ -40,5 +40,6 @@ Special thanks to flaticon for button outlines.
 
 ## Known Bugs 🛠️
 
+- Time entrey fields have date attached.
 - Add myJourney has a different view than myFlights and myFriends
 - myJourney textarea is not populating correctly when attempting to edit a post.
