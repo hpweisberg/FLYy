@@ -31,7 +31,7 @@ Check out your friend's journey posts to see what crazy adventures they've gotte
 
 ## Planning Material 📕
 Check out my
-[Trello Board](https://flyy-harrisonw.fly.dev/) 
+[Trello Board](https://trello.com/invite/b/HE7sPHMl/ATTI2f471a1582ff82f5112e333bc930c88c543627F8/flly) 
 to see my ERD, WireFrames, and feature implementations.
 
 ## Ice Box 🧊
