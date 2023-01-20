@@ -60,6 +60,7 @@
 
       <% profile.journeys.forEach(journey=> { %>
         <section class="flight-detail-container">
+          <div class="css-selector"></div>
           <div>
             <div class="friend-journey-date">
               <%= new Date(journey.journeyDate).toLocaleDateString(undefined, { month: "short" , day: "numeric" })

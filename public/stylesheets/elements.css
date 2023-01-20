@@ -184,6 +184,7 @@ h1 {
   box-shadow: rgba(5, 217, 255, 0.1) 0px 20px 25px -5px, rgba(5, 217, 255, 0.04) 0px 10px 10px -5px;
   margin-bottom: 2.5em;
   padding: 1em;
+  position: relative;
 }
 
 .select-flight-to-view-more {
@@ -191,6 +192,7 @@ h1 {
   justify-content: center;
   align-items: center;
   padding: 1.5em;
+  z-index: 4;
 }
 
 .flight-detail-bottom, .flight-detail-mid, .flight-detail-top {
@@ -569,6 +571,7 @@ border-radius: 1px;
   flex-direction: column;
   gap: .5em;
   align-items: flex-start;
+  z-index: 2;
 }
 
   .edit-journey-bottom {
@@ -584,6 +587,7 @@ border-radius: 1px;
   justify-content: center;
   align-items: center;
   padding: 1em;
+  z-index: 3;
 }
 
 #delete-journey {
@@ -666,3 +670,31 @@ label {
   padding-top: 1.6em;
 }
 
+/* ! Animation */
+
+.css-selector {
+  background: linear-gradient(306deg, #fa720b, #0bf2fa);
+  background-size: 400% 400%;
+
+  -webkit-animation: Flight-card-animation 10s ease infinite;
+  animation: Flight-card-animation 10s ease infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 34%);
+
+  z-index: 1;
+  position: absolute;
+  max-width: 25em;
+  max-height: 25em;
+  inset: 0;
+  isolation: isolate;
+}
+
+@-webkit-keyframes Flight-card-animation {
+  0%{background-position:33% 0%}
+  50%{background-position:68% 100%}
+  100%{background-position:33% 0%}
+}
+@keyframes Flight-card-animation {
+  0%{background-position:33% 0%}
+  50%{background-position:68% 100%}
+  100%{background-position:33% 0%}
+}

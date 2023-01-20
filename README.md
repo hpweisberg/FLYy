@@ -24,6 +24,7 @@ Check out your friend's journey posts to see what crazy adventures they've gotte
 - Mongoose
 - NodeJS
 - ExpressJS
+- Google OAuth
 - HTML
 - CSS
 - JavaScript

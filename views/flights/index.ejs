@@ -38,7 +38,7 @@
                   <div class="flight-card-terminal">
                     <%= flight.departureAirport %>
                   </div>
-
+                    
                   <div class="flight-card-text">Departs: </div>
                   <%= (flight.departureTime).toLocaleDateString(undefined, { hour: "numeric" , minute: "numeric"
                     }).slice(-7) %>
@@ -66,6 +66,7 @@
 
 
   <section class="flight-detail-container" >
+    <div class="css-selector"></div>
     <div class="select-flight-to-view-more">
       Please select a flight to view addtional detials.
     </div>
