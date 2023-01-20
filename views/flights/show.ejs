@@ -63,9 +63,11 @@
       </section>
 
       <section class="flight-detail-container">
-        <a href="/flights/<%= flight._id %>/edit">
-          <button class="edit-btn"> <img class="edit-btn" src="/assets/edit.png" alt=""></button>
-        </a>
+        <div class="flight-detail-edit-btn">
+          <a href="/flights/<%= flight._id %>/edit">
+            <button class="edit-btn"> <img class="edit-btn" src="/assets/edit.png" alt=""></button>
+          </a>
+        </div>
 
         <div class="flight-detail-top">
           <div class="big-date">
@@ -99,7 +101,7 @@
 
         <div class="flight-detail-bottom">
           <div class="flight-detail-bottom-elements">
-            <div class="flight-no-txt">Flight Number: </div>
+            <div class="flight-no-txt">Flight #: </div>
             <div class="flight-detail-bottom-bold">
               <%= flight.flightNo %>
             </div>
