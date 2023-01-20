@@ -113,6 +113,13 @@ function deleteFlight(req, res){
   })
 }
 
+function dateConverter(req, res){
+  Flight.findById(req.body)
+  .then(flight => {
+    
+  })
+}
+
 export {
   index,
   newFlight as new,
@@ -121,4 +128,5 @@ export {
   edit,
   updateFlight as update,
   deleteFlight as delete,
+  dateConverter,
 }
