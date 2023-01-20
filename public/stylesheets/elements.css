@@ -65,6 +65,7 @@ input::placeholder {
   box-shadow: rgba(5, 217, 255, 0.24) 0px 3px 8px;
 }
 
+
 .flight-card:hover, .journey-card:hover {
   cursor: pointer;
   background-color: lightblue;
@@ -97,6 +98,21 @@ input::placeholder {
   width: 10em;
   align-items: center;
   justify-content: center;
+  border-left: 4px solid #000;
+}
+
+.card-arrow-right {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-arrow-right > img {
+  content: url("/assets/arrow-card.png");
+  height: 20%;
+  margin: 0;
 }
 
 .flight-card-right {
@@ -105,11 +121,14 @@ input::placeholder {
   width: 10em;
   align-items: center;
   justify-content: center;
+  padding-right: 1em;
 }
 
 .flight-card-date {
-  font-size: var(--fs-700);
+  font-size: var(--fs-650);
+  display: flex;
   font-weight: bold;
+  flex-wrap: nowrap;
 }
 
 .flight-card-logo {
