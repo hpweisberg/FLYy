@@ -379,7 +379,25 @@ h1 {
   color: var(--clr-primary-400);
 }
 
-.flights-bg-img{
+.log-in-bg-img {
+  background-image: url(/assets/log-in-img-color.jpg);
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  display: flex;
+  /* position: absolute; */
+  justify-content: center;
+  align-items: center;
+}
+
+.please-log-in {
+  position: absolute;
+  color: whitesmoke;
+  padding-top: 60px;
+  padding-left: 450px;
+}
+
+.flights-bg-img {
   background-image: url(/assets/flight_photo_1.jpeg), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
   background-blend-mode: overlay;
   width: 100%;
@@ -393,7 +411,7 @@ h1 {
   background-blend-mode: overlay;
 }
 
-.friends-bg-img{
+.friends-bg-img {
   background-image: url(/assets/flight_photo_2.jpeg), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
   background-blend-mode: overlay;
   width: 100%;
@@ -407,7 +425,7 @@ h1 {
   background-blend-mode: overlay;
 }
 
-.journey-bg-img{
+.journey-bg-img {
   background-image: url(/assets/flight_photo_3.png), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
   background-blend-mode: overlay;
   width: 100%;
