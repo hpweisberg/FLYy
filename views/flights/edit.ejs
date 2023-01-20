@@ -5,16 +5,20 @@
     <main class="main-new-flight-container">
 
       <div class="new-flight-card">
-        <button class="back-btn" onclick="window.history.back()">
-          <img class="back-btn" src="/assets/left-arrow-test.png" alt="back-btn">
-        </button>
-        <h1>Edit Flight Details</h1>
+        <div class="edit-flight-top">
+
+          <button class="back-btn" onclick="window.history.back()">
+            <img class="back-btn" src="/assets/left-arrow-test.png" alt="back-btn">
+          </button>
+          <h1>Edit Flight Details</h1>
+          <form action="/flights/<%= flight._id %>?_method=DELETE" method="POST">
+            <button class="delete-btn">
+              <img class="delete-btn" src="/assets/trash.png" alt="delete-btn">
+            </button>
+          </form>
+        </div>
 
         <!-- ? ID could be new-flight like the new flight view. -->
-
-        <p>
-
-        </p>
 
         <form action="/flights/<%= flight._id %>?_method=PUT" id="edit-flight" method="POST">
           <label for="flight-date">Date: <%= new Date(flight.flightDate).toLocaleDateString()%> </label>
@@ -51,14 +55,19 @@
           <input type="datetime-local" id="departure-time" value="<%= flight.departureTime %>" required
             name="departureTime">
 
+          <label for="departure-Terminal">Departing Terminal:</label>
+          <input type="text" value="<%= flight.departureTerminal %>" required id="departure-time" name="departureTerminal">
+
           <label for="arrival-time">Arrival Time: <%= new Date(flight.arrivalTime).toLocaleTimeString([],
               {timeStyle: 'short' })%> </label>
           <input type="datetime-local" id="arrival-time" required name="arrivalTime">
 
-          <button type="submit">Update MyFlight</button>
-        </form>
-        <form action="/flights/<%= flight._id %>?_method=DELETE" method="POST">
-          <button class="delete-btn">Delete myFlight</button>
+          <label for="arrival-Terminal">Arriving Terminal:</label>
+          <input type="text" value="<%= flight.arrivalTerminal %>" required id="arrival-Terminal" name="arrivalTerminal">
+
+          <div class="bottom-edit">Update MyFlight
+            <button type="submit" class="add-btn"><img class="add-btn" src="/assets/add-btn.png" alt=""></button>
+          </div>
         </form>
 
       </div>

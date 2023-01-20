@@ -17,22 +17,24 @@
       <div class="journey-card">
         <div class="flight-card-content">
         <a href="/profiles/<%= profile._id %>/journeys/<%= journey._id %>/edit">
-          
-          <div class=journey-card-left>
-            <span class="journey-card-date"> <%= new Date(journey.journeyDate).toLocaleDateString(undefined, {
-              month: "short", day: "numeric"
-            }) %> </span>
+          <div class="journey-card-link">
+
+            <div class=journey-card-left>
+              <span class="journey-card-date"> <%= new Date(journey.journeyDate).toLocaleDateString(undefined, {
+                month: "short", day: "numeric"
+              }) %> </span>
             </div>
             <div class="journey-card-right">
-
+              
               <%= journey.journeyPost %> 
-            
+              
+            </div>
           </div>
         </a>
         </div>
       </div>
       <% }) %>
-
+  </section>
 
   <section class="flight-detail-container">
     <div class="select-flight-to-view-more">

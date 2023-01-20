@@ -20,7 +20,7 @@
         <button class="add-btn"><img class="add-btn" src="/assets/add-btn.png" alt=""></button>
       </a>
     </div>
-
+    <% flights.sort((a, b) => new Date(a.flightDate) - new Date(b.flightDate)) %>
     <% flights.forEach(flight => { %>
       <% if (flight.owner.equals(user?.profile._id)) { %>
         <a class="flight-card-link" href="/flights/<%= flight._id %>">

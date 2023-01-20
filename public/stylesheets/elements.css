@@ -10,7 +10,8 @@
   display: flex;
   flex-direction: row;
   gap: 5em;
-  background-color: var(--clr-background-100)
+  background-color: var(--clr-background-100);
+  height: 100vh;
 }
 
 .lading-page-btns {
@@ -322,7 +323,7 @@ h1 {
   height: 2em;
   border: none;
   background: none;
-  border-radius: 35%;
+  /* border-radius: 35%; */
 }
 
 .back-btn > img:hover {
@@ -333,7 +334,18 @@ h1 {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  
+}
+
+.delete-btn {
+  width: 1.8em;
+  height: 2em;
+  border: none;
+  background: none;
+  /* border-radius: 35%; */
+}
+.delete-btn:hover {
+  content: url("/assets/trash-hover.png");
+
 }
 
 .add-btn {
@@ -500,7 +512,11 @@ h1 {
   overflow-y: scroll;
   padding-top: 3em;
   width: 25em;
+}
 
+#journeyPost {
+  width: 80%;
+  height: 50%;
 }
 
 /* ! New Flight */
@@ -512,6 +528,7 @@ h1 {
   margin: 1em;
   padding: 0 1em;
   color: black;
+  margin-bottom: 25em;
 }
 
 label {
@@ -558,4 +575,21 @@ label {
 
 .edit-flight-details-form {
   background-color: blue;
+}
+
+.edit-flight-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-flight-top > .back-btn {
+  margin-right: 1em;
+}
+
+.bottom-edit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1.6em;
 }
